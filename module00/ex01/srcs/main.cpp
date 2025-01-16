@@ -13,6 +13,11 @@
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
 
+void	signalHandler( int signum ) {
+	std::cout << CTRL_C << std::endl;
+	std::exit( signum );
+}
+
 void displayWelcome() {
     std::cout << "\033[1;36m";
     std::cout << "**********************************************" << std::endl;
@@ -28,6 +33,7 @@ int main() {
     PhoneBook phonebook;
     std::string command;
 
+    std::signal( SIGINT, signalHandler );
     displayWelcome();
     const std::string prompts[] = {
         MAGENTA "What's next, friend? > " RESET,

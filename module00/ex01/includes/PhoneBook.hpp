@@ -6,7 +6,7 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 14:18:20 by claprand          #+#    #+#             */
-/*   Updated: 2025/01/14 12:03:31 by claprand         ###   ########.fr       */
+/*   Updated: 2025/01/15 11:31:22 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 #define WHITE "\033[0;97m"
 #define ORANGE "\033[38;5;214m"
 #define RESET   "\033[0m"
+#define CTRL_C " Program quit because of user : ctrl c!"
+#define CTRL_D "Program quit because of user : ctrl d!"
 
 # include "Contact.hpp"
 # include <string>
@@ -30,6 +32,7 @@
 # include <cctype>
 # include <iomanip> 
 # include <cstdlib>
+# include <csignal>
 
 class PhoneBook {
     
@@ -42,7 +45,6 @@ class PhoneBook {
         void displayContacts();
         std::string truncate(std::string);
         bool isnum(std::string);
-        bool checkInput(std::string);
 
     private : 
         Contact _contacts[9];

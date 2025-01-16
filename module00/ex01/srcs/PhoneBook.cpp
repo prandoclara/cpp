@@ -39,7 +39,6 @@ std::string PhoneBook::getInput(std::string str) {
     return input;
 }
 
-
 void PhoneBook::addContact(){
     if (this->_nbContact == 8)
         this->_nbContact = 0;
@@ -49,10 +48,6 @@ void PhoneBook::addContact(){
     this->_contacts[this->_nbContact].setPhoneNumber(this->getInput("Phone Number : "));
     this->_contacts[this->_nbContact].setDarkestSecret(this->getInput("Darkest Secret : "));
     this->_nbContact++;
-}
-
-bool PhoneBook::checkInput(std::string input){
-        
 }
 
 void PhoneBook::displayContacts() {
