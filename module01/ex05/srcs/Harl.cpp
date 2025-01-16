@@ -6,7 +6,7 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 17:09:12 by claprand          #+#    #+#             */
-/*   Updated: 2025/01/16 11:14:00 by claprand         ###   ########.fr       */
+/*   Updated: 2025/01/16 11:59:22 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,3 @@ void Harl::complain(std::string level){
     }
     std::cout << BLUE << "[UNKNOWN]" << std::endl << RESET << UNKNOWN << std::endl;
 }
-
