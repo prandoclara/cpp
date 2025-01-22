@@ -6,7 +6,7 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 13:51:58 by claprand          #+#    #+#             */
-/*   Updated: 2025/01/10 14:14:16 by claprand         ###   ########.fr       */
+/*   Updated: 2025/01/22 10:43:15 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,8 @@
 std::string upperletter(std::string s)
 {
     std::size_t i;
-    i = 0;
-    while (i < s.length())
-    {
+    for (i = 0; i < s.length(); i++)
         s[i] = std::toupper(s[i]);
-        i++;
-    }
     return (s);
 }
 
@@ -32,12 +28,8 @@ int main(int ac, char **av)
     else
     {
         int i;
-        i = 1;
-        while (i < ac)
-        {
+        for (i = 1; i < ac; i++)
             std::cout << upperletter(av[i]);
-            i++;
-        }    
     }
     std::cout << std::endl;
 }
