@@ -6,7 +6,7 @@
 #    By: clara <clara@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/10 13:51:48 by claprand          #+#    #+#              #
-#    Updated: 2025/01/20 14:05:08 by clara            ###   ########.fr        #
+#    Updated: 2025/01/24 15:14:20 by clara            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,14 +22,14 @@ CYAN			= \033[0;96m
 WHITE			= \033[0;97m
 ORANGE			= \033[38;5;214m
 
-NAME			= Maintenant_on_peut_parler
+NAME			= ScavTrap
 CC				= c++
 FLAGS			= -Wall -Werror -Wextra -std=c++98
 INCLUDES		= -I ./includes
 RM				= rm -rf
 VALGRINDCF		= valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes
 
-SRC_FUNCTIONS	= main Fixed
+SRC_FUNCTIONS	= main ScavTrap ClapTrap
 OBJ_DIR			= obj/
 SRC_DIR			= srcs/
 SRC				= $(addprefix $(SRC_DIR), $(addsuffix .cpp, $(SRC_FUNCTIONS)))
@@ -47,20 +47,20 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp | $(IFMAKE_DIR)
 					@$(CC) $(FLAGS) -c $< -o $@ $(INCLUDES)
 					
 $(NAME):		$(OBJ)
-					@echo "$(GREY)Compiling Maintenant, on peut parler$(DEF_COLOR)"
+					@echo "$(GREY)Compiling ScavTrap$(DEF_COLOR)"
 					@$(CC) $(FLAGS) -o $(NAME) $(OBJ) $(INCLUDES)
-					@echo "$(GREEN)Maintenant, on peut parler ready.$(DEF_COLOR)"
+					@echo "$(GREEN)ScavTrap ready.$(DEF_COLOR)"
 
 clean:
-					@echo "$(MAGENTA)Maintenant, on peut parler objects files cleaned!$(DEF_COLOR)"
+					@echo "$(MAGENTA)ScavTrap objects files cleaned!$(DEF_COLOR)"
 					@$(RM) $(OBJ_DIR)
 					
 fclean:			clean
-					@echo "$(RED)Maintenant, on peut parler removed.$(DEF_COLOR)"
+					@echo "$(RED)ScavTrap removed.$(DEF_COLOR)"
 					@$(RM) $(NAME)
 
 re:				fclean all
-					@echo "$(BLUE)Cleaned and rebuilt everything for Maintenant, on peut parler $(DEF_COLOR)"
+					@echo "$(BLUE)Cleaned and rebuilt everything for ScavTrap $(DEF_COLOR)"
 
 vcf:			$(NAME)
 					$(VALGRINDCF) ./$(NAME)
