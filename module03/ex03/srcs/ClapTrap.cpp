@@ -6,7 +6,7 @@
 /*   By: clara <clara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 13:43:17 by clara             #+#    #+#             */
-/*   Updated: 2025/01/24 15:15:28 by clara            ###   ########.fr       */
+/*   Updated: 2025/01/24 17:27:29 by clara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ ClapTrap::ClapTrap(){
     this->_hitPoints = 10;
     this->_energyPoints = 10;
     this->_attackDamage = 0;
-    std::cout << GREY << "ClapTrap " << this->_name << " constructor!" << RESET << std::endl;
+    std::cout << GREY << "ClapTrap default constructor called! " << RESET << std::endl;
     return;
 }
 
@@ -35,7 +35,7 @@ ClapTrap::ClapTrap(ClapTrap const &cpy){
 	this->_hitPoints = cpy._hitPoints;
 	this->_energyPoints = cpy._energyPoints;
 	this->_attackDamage = cpy._attackDamage;
-	std::cout << GREY << "ClapTrap " << this->_name << " contructor called!" << RESET << std::endl ;
+	std::cout << GREY << "ClapTrap " << this->_name << " copy contructor called!" << RESET << std::endl ;
 	*this = cpy ;
 }
 
@@ -62,22 +62,30 @@ void ClapTrap::setAttackDamage(unsigned int attackDamage){
     this->_attackDamage = attackDamage;
 }
 
+void ClapTrap::setHitPoints(unsigned int hitPoints){
+    this->_hitPoints = hitPoints;
+}
+
+void ClapTrap::setEnergyPoints(unsigned int energyPoints){
+    this->_energyPoints = energyPoints;    
+}
+
 std::string ClapTrap::getName() const{
     return (this->_name);
 }
 
 unsigned int ClapTrap::getHitPoints() const{
-    std::cout << GREY << this->_name << " hit points left : " << this->_hitPoints << RESET << std::endl;
+    // std::cout << GREY << this->_name << " hit points left : " << this->_hitPoints << RESET << std::endl;
     return (this->_hitPoints);
 }
 
 unsigned int ClapTrap::getAttackDamage() const{
-    std::cout << GREY << this->_name << " attack damage : " << this->_attackDamage << RESET << std::endl;
+    // std::cout << GREY << this->_name << " attack damage : " << this->_attackDamage << RESET << std::endl;
     return (this->_attackDamage);
 }
 
 unsigned int ClapTrap::getEnergyPoints() const{
-    std::cout << GREY << this->_name << " energy points left : " << this->_energyPoints << RESET << std::endl;
+    // std::cout << GREY << this->_name << " energy points left : " << this->_energyPoints << RESET << std::endl;
     return (this->_energyPoints);
 }
 
