@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clara <clara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 11:26:40 by clara             #+#    #+#             */
-/*   Updated: 2025/01/20 14:00:01 by clara            ###   ########.fr       */
+/*   Updated: 2025/01/28 13:21:43 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,19 @@ Fixed::Fixed() : _n(0){
 
 Fixed::Fixed(const int n){
     std::cout << "Parametric constructor called (int)" << std::endl;
-    _n = n * (1 << _fractionalBits);
+    _n = n * (1 << _bits);
     return ;
 }
 
 Fixed::Fixed(const float f){
     std::cout << "Paramttric constructor called (float)" << std::endl;
-    _n = roundf(f * (1 << _fractionalBits));
+    _n = roundf(f * (1 << _bits));
     return ;
 }
 
-Fixed::Fixed(Fixed const & src){
+Fixed::Fixed(Fixed const & cpy){
     std::cout << "Copy Constructor called" << std::endl;
-    *this = src;
+    *this = cpy;
     return ;
 }
 
@@ -47,11 +47,6 @@ Fixed & Fixed::operator=(Fixed const & rhs){
     return *this;   
 }
 
-
-int Fixed::getValue() const{
-    return (this->_n);
-}
-
 int Fixed::getRawBits(void ) const {
 	return (this->_n);
 }
@@ -61,11 +56,11 @@ void Fixed::setRawBits(int const raw) {
 }
 
 float Fixed::toFloat(void) const {
-	return (float)_n / (1 << _fractionalBits);
+	return (float)_n / (1 << _bits);
 }
 
 int Fixed::toInt(void) const {
-	return (_n >> _fractionalBits);
+	return (_n >> _bits);
 }
 
 std::ostream& operator<<(std::ostream& out, const Fixed& fixed) {

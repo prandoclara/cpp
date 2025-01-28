@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clara <clara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 11:26:26 by clara             #+#    #+#             */
-/*   Updated: 2025/01/20 14:00:57 by clara            ###   ########.fr       */
+/*   Updated: 2025/01/28 11:22:18 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,10 @@ class Fixed{
         Fixed();
         Fixed(const int n);
         Fixed(const float f);
-        Fixed(Fixed const & src);
+        Fixed(Fixed const & cpy);
         ~Fixed();
 
         Fixed & operator=(Fixed const & rhs);
-        int getValue() const;
         int getRawBits(void ) const;
         void setRawBits(int const raw);
         float toFloat(void) const;
@@ -46,7 +45,7 @@ class Fixed{
     
     private : 
         int _n;
-        static const int _fractionalBits = 8;
+        static const int _bits = 8;
 };
 
 std::ostream& operator<<(std::ostream& out, const Fixed& fixed);

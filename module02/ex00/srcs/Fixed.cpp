@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clara <clara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 11:26:40 by clara             #+#    #+#             */
-/*   Updated: 2025/01/20 12:04:57 by clara            ###   ########.fr       */
+/*   Updated: 2025/01/28 11:14:59 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ Fixed::Fixed() : _n(0){
     return ;
 }
 
-Fixed::Fixed(Fixed const & src){
+Fixed::Fixed(Fixed const & cpy){
     std::cout << "Copy Constructor called" << std::endl;
-    *this = src;
+    *this = cpy;
     return ;
 }
 
@@ -33,11 +33,6 @@ Fixed & Fixed::operator=(Fixed const & rhs){
     if (this != &rhs)
 		this->_n = rhs.getRawBits();
     return *this;   
-}
-
-
-int Fixed::getValue() const{
-    return (this->_n);
 }
 
 int Fixed::getRawBits(void ) const {
