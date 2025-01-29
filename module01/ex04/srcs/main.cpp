@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clara <clara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 16:59:09 by claprand          #+#    #+#             */
-/*   Updated: 2025/01/24 11:08:07 by clara            ###   ########.fr       */
+/*   Updated: 2025/01/27 14:22:48 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ int main(int ac, char **av){
         return 1;
     }
 
-    std::ifstream inputFile(filename);
+    std::ifstream inputFile(filename.c_str());
     if (!inputFile.is_open()) {
-        std::cerr << RED << "Error: Could not open input file \"" << filename << "\"." << RESET << std::endl;
+        std::cerr << RED << "Error: Could not open input file " << filename << RESET << std::endl;
         return 1;
     }
 
@@ -65,7 +65,7 @@ int main(int ac, char **av){
         pos += s2.length();
     }
 
-    std::ofstream outputFile(filename + ".replace");
+    std::ofstream outputFile((filename + ".replace").c_str());
     if (!outputFile.is_open()) {
         std::cerr << RED << "Error: Could not create output file \"" << filename + ".replace\"." << RESET << std::endl;
         return 1;

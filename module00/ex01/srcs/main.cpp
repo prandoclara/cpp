@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clara <clara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 16:20:17 by claprand          #+#    #+#             */
-/*   Updated: 2025/01/13 16:21:14 by clara            ###   ########.fr       */
+/*   Updated: 2025/01/22 15:22:12 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,25 +33,25 @@ int main() {
     PhoneBook phonebook;
     std::string command;
 
-    std::signal( SIGINT, signalHandler );
+    std::signal(SIGINT, signalHandler);
     displayWelcome();
-    const std::string prompts[] = {
-        MAGENTA "What's next, friend? > " RESET,
-        YELLOW "PhoneBook at your service! > " RESET,
-        GREEN "What would you like to do? > " RESET };
-    
-    while (1) {
-        std::cout << prompts[rand() % 3];
-        std::cin >> command;
 
-        if (command == "ADD")
+    while (true) {
+        std::cout << YELLOW << "What would you like to do? > " << RESET;
+        std::getline(std::cin, command);
+
+        if (command == "ADD") {
             phonebook.addContact();
-        else if (command == "SEARCH")
+        } else if (command == "SEARCH") {
             phonebook.searchContact();
-        else if (command == "EXIT")
+        } else if (command == "EXIT") {
             break;
-        else
-            std::cout << "Invalid command. Please use ADD, SEARCH or EXIT" << std::endl;
+        } else if (std::cin.eof()) {
+            exit(0);
+        } else {
+            std::cout << RED << "Invalid command. Please use ADD, SEARCH or EXIT." << RESET << std::endl;
+        }
     }
-    return (0);
+
+    return 0;
 }

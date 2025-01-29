@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clara <clara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 13:43:17 by clara             #+#    #+#             */
-/*   Updated: 2025/01/24 15:15:28 by clara            ###   ########.fr       */
+/*   Updated: 2025/01/29 11:30:57 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ ClapTrap & ClapTrap::operator=(ClapTrap const & rhs){
 }
 
 void ClapTrap::setName(std::string name){
-    this->_name= name;
+    this->_name = name;
 }
 
 void ClapTrap::setAttackDamage(unsigned int attackDamage){
@@ -81,29 +81,24 @@ unsigned int ClapTrap::getEnergyPoints() const{
     return (this->_energyPoints);
 }
 
-void ClapTrap::attack(const std::string& target)
-{
-	if (!this->_energyPoints || !this->_hitPoints)
-	{
+void ClapTrap::attack(const std::string& target){
+	if (!this->_energyPoints || !this->_hitPoints){
 		std::cout << "ClapTrap " << this->_name << " has no " << (!this->_energyPoints ? "energy points" : "hit points") << ", so it cannot attack.." << std::endl;
-		return ;
+		return;
 	}
 	std::cout << "ClapTrap " << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " points of damage!" << std::endl;
 	this->_energyPoints--;
 }
 
-void ClapTrap::takeDamage(unsigned int amount)
-{
+void ClapTrap::takeDamage(unsigned int amount){
 	std::cout << "ClapTrap " << this->_name << " took " << amount << " damage!" << std::endl;
 	this->_hitPoints -= amount;
 }
 
-void ClapTrap::beRepaired(unsigned int amount)
-{
-	if (!this->_energyPoints || !this->_hitPoints)
-	{
+void ClapTrap::beRepaired(unsigned int amount){
+	if (!this->_energyPoints || !this->_hitPoints){
 		std::cout << "ClapTrap " << this->_name << " has no " << (!this->_energyPoints ? "energy points" : "hit points") << ", so it cannot be repaired.." << std::endl;
-		return ;
+		return;
 	}
 	std::cout << "ClapTrap " << this->_name << " gets repaired for " << amount << " hit points!" << std::endl;
 	this->_hitPoints += amount;

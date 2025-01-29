@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: clara <clara@student.42.fr>                +#+  +:+       +#+         #
+#    By: claprand <claprand@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/10 13:51:48 by claprand          #+#    #+#              #
-#    Updated: 2025/01/13 15:45:07 by clara            ###   ########.fr        #
+#    Updated: 2025/01/22 14:53:56 by claprand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ ORANGE			= \033[38;5;214m
 
 NAME			= MyPhoneBook
 CC				= c++
-FLAGS			= -Wall -Werror -Wextra -std=c++98
+FLAGS			= -Wall -Werror -Wextra -std=c++98 -g3
 INCLUDES		= -I ./includes
 RM				= rm -rf
 VALGRINDCF		= valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes

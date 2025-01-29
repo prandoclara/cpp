@@ -6,7 +6,7 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 14:18:32 by claprand          #+#    #+#             */
-/*   Updated: 2025/01/10 15:59:15 by claprand         ###   ########.fr       */
+/*   Updated: 2025/01/22 11:42:03 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ class Contact{
         std::string _nickname;
         std::string _phonenumber;
         std::string _darkestsecret;
-        
 };
 
 #endif

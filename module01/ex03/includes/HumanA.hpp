@@ -6,7 +6,7 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 13:53:17 by claprand          #+#    #+#             */
-/*   Updated: 2025/01/15 16:46:10 by claprand         ###   ########.fr       */
+/*   Updated: 2025/01/27 10:43:02 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@
 class HumanA{
     public :
         HumanA();
-        HumanA(const std::string& name, Weapon& weapon);
+        HumanA(const std::string & name, Weapon & weapon);
         ~HumanA();
         void setName(std::string type);
 		std::string getName(void) const;
@@ -42,7 +42,7 @@ class HumanA{
     
     private :
         std::string _name;
-        Weapon& _weapon;
+        Weapon & _weapon;
 };
 
 #endif

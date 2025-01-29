@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clara <clara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 15:43:14 by clara             #+#    #+#             */
-/*   Updated: 2025/01/24 15:58:47 by clara            ###   ########.fr       */
+/*   Updated: 2025/01/29 11:28:55 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,18 @@ FragTrap::FragTrap(std::string name){
 }
 
 FragTrap::FragTrap(FragTrap const & cpy) : ClapTrap(){
-	std::cout << GREY << "FragTrap copy constructor called" << RESET << std::endl ;
-    *this = cpy ;
+	std::cout << GREY << "FragTrap copy constructor called" << RESET << std::endl;
+    *this = cpy;
 }
 
 FragTrap & FragTrap::operator=(FragTrap const & rhs){
 	if (this != &rhs) {
-		_name = rhs.getName() ;
-		_hitPoints = rhs.getHitPoints() ;
-		_energyPoints = rhs.getEnergyPoints() ;
-		_attackDamage = rhs.getAttackDamage() ;
+		_name = rhs.getName();
+		_hitPoints = rhs.getHitPoints();
+		_energyPoints = rhs.getEnergyPoints();
+		_attackDamage = rhs.getAttackDamage();
 	}
-	return *this ;
+	return *this;
 }
 
 FragTrap::~FragTrap(){
@@ -48,9 +48,9 @@ FragTrap::~FragTrap(){
 }
 
 void	FragTrap::highFivesGuys(void){
-	if (!_hitPoints) {
+	if (!_hitPoints){
 		std::cout << "FragTrap " << getName() << " can't high five cause he/she is dead " << std::endl;
-		return ;
+		return;
 	}
     std::cout << "FragTrap " << getName() << " is requesting a High Five :)" << std::endl; 
 }

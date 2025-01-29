@@ -6,7 +6,7 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 13:52:34 by claprand          #+#    #+#             */
-/*   Updated: 2025/01/15 16:49:50 by claprand         ###   ########.fr       */
+/*   Updated: 2025/01/27 10:51:52 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ HumanA::HumanA() : _weapon(*(new Weapon("default"))){
     return;
 }
 
-HumanA::HumanA(const std::string& name, Weapon& weapon) : _name(name), _weapon(weapon) {
+HumanA::HumanA(const std::string & name, Weapon & weapon) : _name(name), _weapon(weapon) {
    std::cout << RED;
    std::cout << getName() << " called by constructor" << std::endl;
    std::cout << RESET;

@@ -6,7 +6,7 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 11:26:40 by clara             #+#    #+#             */
-/*   Updated: 2025/01/28 13:35:31 by claprand         ###   ########.fr       */
+/*   Updated: 2025/01/28 14:43:16 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,17 +109,17 @@ Fixed Fixed::operator*(Fixed const & rhs) const{
     return Fixed( this->toFloat() * rhs.toFloat() ) ;
 }
 
-Fixed &	Fixed::operator++(void){
+Fixed &	Fixed::operator++(void){ // ++n
 	this->_n++ ;
 	return *this ;
 }
 
-Fixed &	Fixed::operator--(void){
+Fixed &	Fixed::operator--(void){ // --n
 	this -> _n-- ;
 	return *this ;
 }
 
-Fixed Fixed::operator++(int){
+Fixed Fixed::operator++(int){ 
 	Fixed tmp(*this) ;
 	++(*this);
 	return tmp ;
@@ -132,17 +132,21 @@ Fixed Fixed::operator--(int){
 }
 
 Fixed & Fixed::min(Fixed & a, Fixed & b){
+    std::cout << "hello" << std::endl;
 	return a < b ? a : b ;
 }
 
 Fixed & Fixed::max(Fixed & a, Fixed & b){
+    std::cout << "hello" << std::endl;
 	return a > b ? a : b ;
 }
 
 const Fixed & Fixed::min(const Fixed & a, const Fixed & b){
+    std::cout << "world" << std::endl;
 	return a < b ? a : b ;
 }
 
 const Fixed & Fixed::max(const Fixed & a, const Fixed & b){
+    std::cout << "world" << std::endl;
 	return a > b ? a : b ;
 }

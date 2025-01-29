@@ -6,7 +6,7 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 15:51:56 by claprand          #+#    #+#             */
-/*   Updated: 2025/01/15 12:54:20 by claprand         ###   ########.fr       */
+/*   Updated: 2025/01/27 10:37:13 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main(int ac, char **av){
     if (ac == 2){
         int	N = std::atoi(av[1]);
-	    Zombie *horde = zombieHorde( N, "Zombie n°" );
+	    Zombie *horde = zombieHorde(N, "Zombie n°");
 	    for(int i = 0; i < N; ++i)
 		    horde[i].announce();
 	    delete [] horde;

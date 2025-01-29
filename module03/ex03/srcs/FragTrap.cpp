@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clara <clara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 15:43:14 by clara             #+#    #+#             */
-/*   Updated: 2025/01/24 15:58:47 by clara            ###   ########.fr       */
+/*   Updated: 2025/01/29 11:38:37 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ FragTrap::FragTrap(){
     this->_hitPoints = 100;
     this->_energyPoints = 100;
     this->_attackDamage = 30;
-    std::cout << GREY << "FragTrap constructor called!" << RESET << std::endl;
+    std::cout << GREY << "FragTrap default constructor called!" << RESET << std::endl;
 }
 
 FragTrap::FragTrap(std::string name){
@@ -44,7 +44,7 @@ FragTrap & FragTrap::operator=(FragTrap const & rhs){
 }
 
 FragTrap::~FragTrap(){
-    std::cout << GREY << "FragTrap destructor called " << _name << RESET << std::endl ;
+    std::cout << GREY << "FragTrap " << _name << " destroyed!" << RESET << std::endl ;
 }
 
 void	FragTrap::highFivesGuys(void){

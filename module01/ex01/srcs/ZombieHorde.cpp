@@ -6,16 +6,16 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:01:37 by claprand          #+#    #+#             */
-/*   Updated: 2025/01/15 12:59:41 by claprand         ###   ########.fr       */
+/*   Updated: 2025/01/27 10:36:01 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
 std::string intToString(int value) {
-    std::ostringstream oss;
-    oss << value;
-    return oss.str();
+    std::ostringstream buffer;
+    buffer << value;
+    return buffer.str();
 }
 
 Zombie* zombieHorde(int N, std::string name){

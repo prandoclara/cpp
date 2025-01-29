@@ -6,7 +6,7 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 14:18:20 by claprand          #+#    #+#             */
-/*   Updated: 2025/01/15 11:31:22 by claprand         ###   ########.fr       */
+/*   Updated: 2025/01/22 15:44:11 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@
 # include <iomanip> 
 # include <cstdlib>
 # include <csignal>
+#include <limits>
 
 class PhoneBook {
     

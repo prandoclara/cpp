@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clara <clara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 17:07:49 by clara             #+#    #+#             */
-/*   Updated: 2025/01/24 17:39:23 by clara            ###   ########.fr       */
+/*   Updated: 2025/01/29 11:45:51 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,14 @@
 
 DiamondTrap::DiamondTrap() : FragTrap(), ScavTrap(){
     this->_name = "DiamondTrap Default Name";
-    this->_hitPoints = FragTrap::getHitPoints();
-    this->_energyPoints = ScavTrap::getEnergyPoints();
-    this->_attackDamage = FragTrap::getAttackDamage();
-    std::cout << GREY << "DiamondTrap constructor called!" << RESET << std::endl;
+    this->_hitPoints = 100;
+    this->_attackDamage = 30;
+    std::cout << GREY << "DiamondTrap default constructor called!" << RESET << std::endl;
 }
 
 DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name),  _name(name){
-    this->_hitPoints = FragTrap::getHitPoints();
-    this->_energyPoints = ScavTrap::getEnergyPoints();
-    this->_attackDamage = FragTrap::getAttackDamage();
+    this->_hitPoints = 100;
+    this->_attackDamage = 30;
     std::cout << GREY << "DiamondTrap " << this->_name << " constructor!" << RESET << std::endl;
 }
 
@@ -43,7 +41,7 @@ DiamondTrap & DiamondTrap::operator=(DiamondTrap const & rhs){
 }
 
 DiamondTrap::~DiamondTrap(){
-    std::cout << GREY << "DiamondTrap destructor called " << _name << RESET << std::endl ;
+    std::cout << GREY << "DiamondTrap " << _name << " destroyed!" << RESET << std::endl ;
 }
 
 void	DiamondTrap::whoAmI( void ) {

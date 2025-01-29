@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clara <clara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 13:43:17 by clara             #+#    #+#             */
-/*   Updated: 2025/01/24 15:56:26 by clara            ###   ########.fr       */
+/*   Updated: 2025/01/29 11:29:08 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,7 @@ unsigned int ClapTrap::getEnergyPoints() const{
 
 void ClapTrap::attack(const std::string& target)
 {
-	if (!this->_energyPoints || !this->_hitPoints)
-	{
+	if (!this->_energyPoints || !this->_hitPoints){
 		std::cout << "ClapTrap " << this->_name << " has no " << (!this->_energyPoints ? "energy points" : "hit points") << ", so it cannot attack.." << std::endl;
 		return ;
 	}
@@ -100,10 +99,9 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	if (!this->_energyPoints || !this->_hitPoints)
-	{
+	if (!this->_energyPoints || !this->_hitPoints){
 		std::cout << "ClapTrap " << this->_name << " has no " << (!this->_energyPoints ? "energy points" : "hit points") << ", so it cannot be repaired.." << std::endl;
-		return ;
+		return;
 	}
 	std::cout << "ClapTrap " << this->_name << " gets repaired for " << amount << " hit points!" << std::endl;
 	this->_hitPoints += amount;
