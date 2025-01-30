@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/29 14:17:00 by claprand          #+#    #+#             */
-/*   Updated: 2025/01/30 13:26:23 by claprand         ###   ########.fr       */
+/*   Created: 2025/01/30 14:05:08 by claprand          #+#    #+#             */
+/*   Updated: 2025/01/30 14:38:03 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
 #define GREY "\033[0;90m"
 #define RED	"\033[0;91m"
@@ -28,21 +28,16 @@
 #include <iostream>
 #include <iomanip>
 
-class Animal{
+class Brain{
     public : 
-        Animal();
-        Animal(std::string type);
-        Animal(Animal const & cpy);
-        ~Animal();
+        Brain();
+        Brain(Brain const & cpy);
+        ~Brain();
 
-        Animal & operator=(Animal const & rhs);
-        std::string getType() const;
-        void setType(std::string);
-        void makeSound() const;
+        Brain & operator=(Brain const & rhs);
     
     protected :
-        std::string _type;
-        std::string _sound;
+        std::string _ideas[100];
 };
 
 #endif

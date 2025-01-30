@@ -6,7 +6,7 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 14:17:00 by claprand          #+#    #+#             */
-/*   Updated: 2025/01/30 13:26:23 by claprand         ###   ########.fr       */
+/*   Updated: 2025/01/30 16:03:43 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class Animal{
         Animal();
         Animal(std::string type);
         Animal(Animal const & cpy);
-        ~Animal();
+        virtual ~Animal();
 
         Animal & operator=(Animal const & rhs);
         std::string getType() const;

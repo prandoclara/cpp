@@ -6,7 +6,7 @@
 #    By: claprand <claprand@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/10 13:51:48 by claprand          #+#    #+#              #
-#    Updated: 2025/01/29 14:58:58 by claprand         ###   ########.fr        #
+#    Updated: 2025/01/30 13:09:42 by claprand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ INCLUDES		= -I ./includes
 RM				= rm -rf
 VALGRINDCF		= valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes
 
-SRC_FUNCTIONS	= main Animal Dog Cat
+SRC_FUNCTIONS	= main Animal Dog Cat WrongCat WrongAnimal
 OBJ_DIR			= obj/
 SRC_DIR			= srcs/
 SRC				= $(addprefix $(SRC_DIR), $(addsuffix .cpp, $(SRC_FUNCTIONS)))
@@ -47,20 +47,20 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp | $(IFMAKE_DIR)
 					@$(CC) $(FLAGS) -c $< -o $@ $(INCLUDES)
 					
 $(NAME):		$(OBJ)
-					@echo "$(GREY)Compiling ClapTrap$(DEF_COLOR)"
+					@echo "$(GREY)Compiling Polymorphisme$(DEF_COLOR)"
 					@$(CC) $(FLAGS) -o $(NAME) $(OBJ) $(INCLUDES)
-					@echo "$(GREEN)ClapTrap ready.$(DEF_COLOR)"
+					@echo "$(GREEN)Polymorphisme ready.$(DEF_COLOR)"
 
 clean:
-					@echo "$(MAGENTA)ClapTrap objects files cleaned!$(DEF_COLOR)"
+					@echo "$(MAGENTA)Polymorphisme objects files cleaned!$(DEF_COLOR)"
 					@$(RM) $(OBJ_DIR)
 					
 fclean:			clean
-					@echo "$(RED)ClapTrap removed.$(DEF_COLOR)"
+					@echo "$(RED)Polymorphisme removed.$(DEF_COLOR)"
 					@$(RM) $(NAME)
 
 re:				fclean all
-					@echo "$(BLUE)Cleaned and rebuilt everything for ClapTrap $(DEF_COLOR)"
+					@echo "$(BLUE)Cleaned and rebuilt everything for Polymorphisme $(DEF_COLOR)"
 
 vcf:			$(NAME)
 					$(VALGRINDCF) ./$(NAME)

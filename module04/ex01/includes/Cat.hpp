@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cat.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 14:17:00 by claprand          #+#    #+#             */
-/*   Updated: 2025/01/30 13:26:23 by claprand         ###   ########.fr       */
+/*   Updated: 2025/01/29 14:38:21 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
 #define GREY "\033[0;90m"
 #define RED	"\033[0;91m"
@@ -27,22 +27,21 @@
 #include <string.h>
 #include <iostream>
 #include <iomanip>
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-class Animal{
+class Cat : public Animal{
     public : 
-        Animal();
-        Animal(std::string type);
-        Animal(Animal const & cpy);
-        ~Animal();
+        Cat();
+        Cat(std::string type);
+        Cat(Cat const & cpy);
+        ~Cat();
 
-        Animal & operator=(Animal const & rhs);
-        std::string getType() const;
-        void setType(std::string);
+        Cat & operator=(Cat const & rhs);
         void makeSound() const;
     
-    protected :
-        std::string _type;
-        std::string _sound;
+    private : 
+        Brain *_catBrain;
 };
 
 #endif

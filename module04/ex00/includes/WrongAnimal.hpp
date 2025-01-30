@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongWrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/29 14:17:00 by claprand          #+#    #+#             */
-/*   Updated: 2025/01/30 13:26:23 by claprand         ###   ########.fr       */
+/*   Created: 2025/01/30 11:46:36 by claprand          #+#    #+#             */
+/*   Updated: 2025/01/30 11:47:01 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
 #define GREY "\033[0;90m"
 #define RED	"\033[0;91m"
@@ -28,14 +29,14 @@
 #include <iostream>
 #include <iomanip>
 
-class Animal{
+class WrongAnimal{
     public : 
-        Animal();
-        Animal(std::string type);
-        Animal(Animal const & cpy);
-        ~Animal();
+        WrongAnimal();
+        WrongAnimal(std::string type);
+        WrongAnimal(WrongAnimal const & cpy);
+        ~WrongAnimal();
 
-        Animal & operator=(Animal const & rhs);
+        WrongAnimal & operator=(WrongAnimal const & rhs);
         std::string getType() const;
         void setType(std::string);
         void makeSound() const;
