@@ -6,14 +6,14 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 14:40:46 by claprand          #+#    #+#             */
-/*   Updated: 2025/01/31 11:26:37 by claprand         ###   ########.fr       */
+/*   Updated: 2025/01/31 11:33:16 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Brain.hpp"
 
-Cat::Cat() : Animal(), _catBrain(new Brain()){
+Cat::Cat() : AAnimal(), _catBrain(new Brain()){
     this->_type = MAGENTA "Cat" RESET;
     this->_sound = MAGENTA "I Meow : Meow Meow" RESET;
     std::cout << MAGENTA << "Cat : Default constructor called!" << RESET << std::endl;

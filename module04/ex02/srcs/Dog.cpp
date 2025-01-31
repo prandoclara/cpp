@@ -6,14 +6,14 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 14:40:51 by claprand          #+#    #+#             */
-/*   Updated: 2025/01/31 11:26:28 by claprand         ###   ########.fr       */
+/*   Updated: 2025/01/31 11:33:25 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 #include "Brain.hpp"
 
-Dog::Dog() : Animal(), _dogBrain(new Brain()){
+Dog::Dog() : AAnimal(), _dogBrain(new Brain()){
     this->_type = BLUE "Dog" RESET;
     this->_sound = BLUE "I bark : Waf Waf" RESET;
     std::cout << BLUE << "Dog : Default constructor called!" << RESET << std::endl;

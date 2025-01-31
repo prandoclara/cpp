@@ -6,11 +6,11 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 14:16:36 by claprand          #+#    #+#             */
-/*   Updated: 2025/01/31 11:24:26 by claprand         ###   ########.fr       */
+/*   Updated: 2025/01/31 11:39:26 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "WrongAnimal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
@@ -19,7 +19,7 @@
 int main()
 {
     int size = 6;
-    Animal *array_of_animals[size];
+    AAnimal *array_of_animals[size];
 
     for (int i = 0; i < size / 2; i++){
         array_of_animals[i] = new Dog;
@@ -30,7 +30,7 @@ int main()
         array_of_animals[i] = new Cat;
         std::cout << std::endl;
     }
-
+    
     for (int i = 0; i < size; i++){
         array_of_animals[i]->makeSound();
         std::cout << std::endl;

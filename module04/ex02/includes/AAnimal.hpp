@@ -5,13 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/29 14:17:00 by claprand          #+#    #+#             */
-/*   Updated: 2025/01/31 11:31:52 by claprand         ###   ########.fr       */
+/*   Created: 2025/01/31 11:32:20 by claprand          #+#    #+#             */
+/*   Updated: 2025/01/31 11:33:54 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef AANIMAL_HPP
+# define AANIMAL_HPP
 
 #define GREY "\033[0;90m"
 #define RED	"\033[0;91m"
@@ -28,17 +28,17 @@
 #include <iostream>
 #include <iomanip>
 
-class Animal{
+class AAnimal{
     public : 
-        Animal();
-        Animal(std::string type);
-        Animal(Animal const & cpy);
-        virtual ~Animal();
+        AAnimal();
+        AAnimal(std::string type);
+        AAnimal(AAnimal const & cpy);
+        virtual ~AAnimal();
 
-        Animal & operator=(Animal const & rhs);
+        AAnimal & operator=(AAnimal const & rhs);
         std::string getType() const;
         void setType(std::string);
-        void makeSound() const;
+        virtual void makeSound() const = 0;
     
     protected :
         std::string _type;
