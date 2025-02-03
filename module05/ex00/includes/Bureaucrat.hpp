@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
+/*   By: clara <clara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 16:24:31 by claprand          #+#    #+#             */
-/*   Updated: 2025/02/03 16:33:26 by claprand         ###   ########.fr       */
+/*   Updated: 2025/02/03 20:24:47 by clara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,12 @@ class Bureaucrat{
         // Bureaucrat::GradeTooLowException
         std::string const getName() const;
         int getGrade() const;
-        Bureaucrat & operator<<(Bureaucrat const & rhs);
     
     private : 
         const std::string _name;
         int _grade;
 };
+
+std::ostream &	operator<<(std::ostream & os, Bureaucrat const & rhs);
 
 #endif
