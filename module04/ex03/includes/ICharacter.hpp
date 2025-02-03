@@ -6,7 +6,7 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 15:19:57 by claprand          #+#    #+#             */
-/*   Updated: 2025/01/31 16:55:01 by claprand         ###   ########.fr       */
+/*   Updated: 2025/02/03 13:54:03 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,24 +29,16 @@
 #include <iomanip>
 #include "AMateria.hpp"
 
+class AMateria;
+
 class ICharacter{
     public : 
-        ICharacter();
-        ICharacter(std::string name);
-        ICharacter(ICharacter const & cpy);
-        virtual ~ICharacter();
-
-        ICharacter & operator=(ICharacter const & rhs);
-        virtual std::string const & getName() const = 0;
-        // virtual void equip(AMateria * m) = 0;
-        // virtual void unequip(int idx) = 0;
-        virtual void use(int idx, ICharacter & target) = 0;
-        std::string const & getIventorySize() const;
+        virtual ~ICharacter() {}
         
-    protected :
-        std::string _name;
-        // AMateria* _inventory[4];
-        unsigned int _inventorySize;
+        virtual std::string const &	getName(void) const = 0 ;
+		virtual void equip(AMateria* m) = 0 ;
+		virtual void unequip(int idx) = 0 ;
+		virtual void use(int idx, ICharacter & target) = 0 ;
 };
 
 #endif

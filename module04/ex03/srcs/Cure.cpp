@@ -6,24 +6,24 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 14:44:54 by claprand          #+#    #+#             */
-/*   Updated: 2025/01/31 16:36:00 by claprand         ###   ########.fr       */
+/*   Updated: 2025/02/03 15:11:58 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
 Cure::Cure() : AMateria("cure"){
-    std::cout << GREEN << "Cure :  Default constructor called!" << RESET << std::endl;
+    std::cout << CYAN << "Cure :  Default constructor called!" << RESET << std::endl;
     return;
 }
 
-Cure::Cure(Cure const & cpy) : AMateria( "Cure" ){
-    std::cout << GREEN << "Cure : Copy constructor called!"  << RESET << std::endl;
+Cure::Cure(Cure const & cpy) : AMateria( "cure" ){
+    std::cout << CYAN << "Cure : Copy constructor called!"  << RESET << std::endl;
     *this = cpy;
 }
 
 Cure::~Cure(){
-    std::cout << GREEN << "Cure : Deconstructor called!"  << RESET << std::endl;
+    std::cout << CYAN << "Cure : Deconstructor called!"  << RESET << std::endl;
     return ;
 }
 
@@ -39,9 +39,5 @@ AMateria *Cure::clone() const{
 }
 
 void	Cure::use(ICharacter & target){
-	std::cout << "Cure : * heals " << target.getName() << "'s wounds *\n";
-}
-
-std::string const & Cure::getName() const{
-    return this->_name;
+	std::cout << "* heals " << target.getName() << "'s wounds *\n";
 }

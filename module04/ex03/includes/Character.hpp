@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/31 14:06:16 by claprand          #+#    #+#             */
-/*   Updated: 2025/02/03 11:40:54 by claprand         ###   ########.fr       */
+/*   Created: 2025/02/03 10:47:24 by claprand          #+#    #+#             */
+/*   Updated: 2025/02/03 13:56:54 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CURE_HPP
-# define CURE_HPP
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
 
 #define GREY "\033[0;90m"
 #define RED	"\033[0;91m"
@@ -27,18 +27,27 @@
 #include <string.h>
 #include <iostream>
 #include <iomanip>
-#include "AMateria.hpp"
+#include "ICharacter.hpp"
 
-class Cure: public AMateria{
-    public:
-        Cure();
-        Cure(Cure const & cpy);
-        ~Cure();
+class Character : public ICharacter{
+    public :
+        Character();
+        Character(std::string name);
+        Character(Character const & cpy);
+        ~Character();                                                                                    
 
-        Cure & operator=(Cure const & rhs);
+        Character & operator=(Character const & rhs);
         
-        AMateria* clone() const;
-        void use(ICharacter & target);
+        std::string const & getName() const;
+        unsigned int const & getIventorySize() const;
+        void equip(AMateria* m);
+        void unequip(int idx);
+        void use(int idx, ICharacter& target);
+
+    protected :
+        std::string _name;
+        AMateria* _inventory[4];
+        unsigned int _inventorySize;
 };
 
 #endif

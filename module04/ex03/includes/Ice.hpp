@@ -6,7 +6,7 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 14:06:16 by claprand          #+#    #+#             */
-/*   Updated: 2025/01/31 16:35:23 by claprand         ###   ########.fr       */
+/*   Updated: 2025/02/03 11:40:50 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,16 @@
 #include <iomanip>
 #include "AMateria.hpp"
 
-class Ice: public AMateria, public ICharacter{
+class Ice: public AMateria{
     public:
         Ice();
         Ice(Ice const & cpy);
         ~Ice();
 
         Ice & operator=(Ice const & rhs);
+        
         AMateria* clone() const;
         void use(ICharacter & target);
-        std::string const & getName() const;
 };
 
 #endif

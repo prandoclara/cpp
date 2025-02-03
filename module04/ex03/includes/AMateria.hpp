@@ -6,7 +6,7 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 13:50:25 by claprand          #+#    #+#             */
-/*   Updated: 2025/01/31 16:37:30 by claprand         ###   ########.fr       */
+/*   Updated: 2025/02/03 14:00:01 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@
 #include <iostream>
 #include <iomanip>
 #include "ICharacter.hpp"
+
+class ICharacter;
 
 class AMateria{
     public:

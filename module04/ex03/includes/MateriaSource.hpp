@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/31 14:06:16 by claprand          #+#    #+#             */
-/*   Updated: 2025/02/03 11:40:54 by claprand         ###   ########.fr       */
+/*   Created: 2025/02/03 11:26:39 by claprand          #+#    #+#             */
+/*   Updated: 2025/02/03 14:34:02 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CURE_HPP
-# define CURE_HPP
+#ifndef MATERIASOURCE_HPP
+# define MATERIASOURCE_HPP
 
 #define GREY "\033[0;90m"
 #define RED	"\033[0;91m"
@@ -28,17 +28,25 @@
 #include <iostream>
 #include <iomanip>
 #include "AMateria.hpp"
+#include "IMateriaSource.hpp"
 
-class Cure: public AMateria{
+class MateriaSource : public IMateriaSource{
     public:
-        Cure();
-        Cure(Cure const & cpy);
-        ~Cure();
+        MateriaSource();
+        MateriaSource(std::string const & type);
+        MateriaSource(MateriaSource const & cpy);
+        virtual ~MateriaSource();
 
-        Cure & operator=(Cure const & rhs);
-        
-        AMateria* clone() const;
-        void use(ICharacter & target);
+        MateriaSource & operator=(MateriaSource const & rhs);
+        void learnMateria(AMateria*);
+        AMateria* createMateria(std::string const & type);
+        std::string const & getType() const;
+        unsigned int const & getSize() const;
+
+    protected:
+        std::string _type;
+        AMateria* _stored[4];
+        unsigned int _size;
 };
 
 #endif
