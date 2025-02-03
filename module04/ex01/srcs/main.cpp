@@ -6,7 +6,7 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 14:16:36 by claprand          #+#    #+#             */
-/*   Updated: 2025/01/31 11:24:26 by claprand         ###   ########.fr       */
+/*   Updated: 2025/01/31 14:05:36 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int main()
 	kitty.getBrain()->setIdeas(0, "Food");
 	{
 		Cat kitty2 = kitty;
+        kitty2.getBrain()->setIdeas(0, "Play");
 		std::cout << kitty2.getBrain()->getIdeas(0) << std::endl ;
 		std::cout << kitty.getBrain()->getIdeas(0) << std::endl ;
 	}
