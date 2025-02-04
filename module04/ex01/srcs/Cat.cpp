@@ -6,7 +6,7 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 14:40:46 by claprand          #+#    #+#             */
-/*   Updated: 2025/02/04 10:56:40 by claprand         ###   ########.fr       */
+/*   Updated: 2025/02/04 11:20:25 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ Cat::Cat(Cat const & cpy) : Animal(cpy){
         _catBrain = new Brain(*cpy._catBrain);
     else
         _catBrain = 0;
-    *this = cpy;
 }
 
 Cat::~Cat(){

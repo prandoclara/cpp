@@ -6,7 +6,7 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 14:05:08 by claprand          #+#    #+#             */
-/*   Updated: 2025/01/31 11:16:10 by claprand         ###   ########.fr       */
+/*   Updated: 2025/02/04 11:16:08 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Brain{
     public : 
         Brain();
         Brain(Brain const & cpy);
-        ~Brain();
+        virtual ~Brain();
 
         Brain & operator=(Brain const & rhs);
         const std::string & getIdeas(unsigned int index) const;

@@ -12,7 +12,7 @@
 
 #include "AAnimal.hpp"
 
-AAnimal::AAnimal() : _type("AAnimal"), _sound(GREEN "*No Sound*" RESET){
+AAnimal::AAnimal() : _type("AAnimal"){
     std::cout << GREEN << "AAnimal :  Default constructor called!" << RESET << std::endl;
     return;
 }
@@ -49,5 +49,5 @@ void AAnimal::setType(std::string type){
 }
 
 void AAnimal::makeSound() const{
-    std::cout << _sound << std::endl;
+    std::cout << GREEN << "*No Sound*" << RESET << std::endl;
 }

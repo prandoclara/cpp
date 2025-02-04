@@ -6,7 +6,7 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 14:40:51 by claprand          #+#    #+#             */
-/*   Updated: 2025/02/04 10:58:08 by claprand         ###   ########.fr       */
+/*   Updated: 2025/02/04 11:20:31 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ Dog::Dog(Dog const & cpy) : Animal(cpy){
         _dogBrain = new Brain(*cpy._dogBrain);
     else
         _dogBrain = 0;
-    *this = cpy;
 }
 
 Dog::~Dog(){
