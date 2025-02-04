@@ -12,7 +12,7 @@
 
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal() : _type("WrongAnimal"), _sound(ORANGE "*makes a random WrongAnimal sound*" RESET){
+WrongAnimal::WrongAnimal() : _type("WrongAnimal"){
     std::cout << ORANGE << "WrongAnimal :  Default constructor called!" << RESET << std::endl;
     return;
 }
@@ -49,5 +49,5 @@ void WrongAnimal::setType(std::string type){
 }
 
 void WrongAnimal::makeSound() const{
-    std::cout << _sound << std::endl;
+    std::cout << ORANGE << "*makes a random WrongAnimal sound*" << RESET << std::endl;
 }

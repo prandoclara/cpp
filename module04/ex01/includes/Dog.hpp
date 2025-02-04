@@ -40,9 +40,9 @@ class Dog : public Animal{
         Dog & operator=(Dog const & rhs);
         void makeSound() const;
         Brain *getBrain() const;
-    
+
     private : 
-        Brain* _dogBrain;
+        Brain *_dogBrain;
 };
 
 #endif

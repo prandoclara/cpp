@@ -3,18 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clara <clara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 11:52:26 by claprand          #+#    #+#             */
-/*   Updated: 2025/02/03 22:10:38 by clara            ###   ########.fr       */
+/*   Updated: 2025/02/04 10:31:10 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongCat.hpp"
 
 WrongCat::WrongCat() : WrongAnimal(){
-    // this->_type = CYAN "WrongCat" RESET;
-    // this->_sound = CYAN "I Meow but it sounds wierd" RESET;
+    this->_type = CYAN "WrongCat" RESET;
     std::cout << CYAN << "WrongCat : Default constructor called!" << RESET << std::endl;
     return;
 }
@@ -25,7 +24,7 @@ WrongCat::WrongCat(std::string type){
     return;
 }
 
-WrongCat::WrongCat(WrongCat const & cpy){
+WrongCat::WrongCat(WrongCat const & cpy) : WrongAnimal(cpy){
     std::cout << CYAN << "WrongCat : Copy constructor called" << RESET << std::endl;
     this->_type = cpy._type;
     *this = cpy;
@@ -43,5 +42,5 @@ WrongCat & WrongCat::operator=(WrongCat const & rhs){
 }
 
 // void WrongCat::makeSound() const{
-//     std::cout << _sound << std::endl;
+//     std::cout << CYAN << "I Meow but it sounds wierd" << RESET << std::endl;
 // }

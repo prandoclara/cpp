@@ -6,7 +6,7 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 14:40:46 by claprand          #+#    #+#             */
-/*   Updated: 2025/01/31 11:26:37 by claprand         ###   ########.fr       */
+/*   Updated: 2025/02/04 10:56:40 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,22 @@
 
 Cat::Cat() : Animal(), _catBrain(new Brain()){
     this->_type = MAGENTA "Cat" RESET;
-    this->_sound = MAGENTA "I Meow : Meow Meow" RESET;
     std::cout << MAGENTA << "Cat : Default constructor called!" << RESET << std::endl;
     return;
 }
 
-Cat::Cat(std::string type){
+Cat::Cat(std::string type) : Animal(), _catBrain(new Brain()) {  
     std::cout << MAGENTA << "Cat : Parametric constructor called!" << RESET << std::endl;
     this->_type = type;
-    return;
 }
 
-Cat::Cat(Cat const & cpy){
+Cat::Cat(Cat const & cpy) : Animal(cpy){
     std::cout << MAGENTA << "Cat : Copy constructor called" << RESET << std::endl;
     this->_type = cpy._type;
-    this->_catBrain = 0;
+    if (cpy._catBrain)
+        _catBrain = new Brain(*cpy._catBrain);
+    else
+        _catBrain = 0;
     *this = cpy;
 }
 
@@ -39,17 +40,20 @@ Cat::~Cat(){
     return ;
 }
 
-Cat & Cat::operator=(Cat const & rhs){
-    if (this != &rhs){
+Cat & Cat::operator=(Cat const & rhs) {
+    if (this != &rhs) {
         this->_type = rhs.getType();
         delete _catBrain;
-        _catBrain = new Brain(*rhs._catBrain);
+        if (rhs._catBrain)
+            _catBrain = new Brain(*rhs._catBrain);
+        else
+            _catBrain = 0;
     }
     return *this;
 }
 
 void Cat::makeSound() const{
-    std::cout << _sound << std::endl;
+    std::cout << MAGENTA << "I Meow : Meow Meow" << RESET << std::endl;
 }
 
 Brain *Cat::getBrain() const{

@@ -6,13 +6,13 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 14:20:44 by claprand          #+#    #+#             */
-/*   Updated: 2025/01/30 15:44:48 by claprand         ###   ########.fr       */
+/*   Updated: 2025/02/04 10:43:19 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal() : _type("Animal"), _sound(GREEN "*No Sound*" RESET){
+Animal::Animal() : _type("Animal"){
     std::cout << GREEN << "Animal :  Default constructor called!" << RESET << std::endl;
     return;
 }
@@ -49,5 +49,5 @@ void Animal::setType(std::string type){
 }
 
 void Animal::makeSound() const{
-    std::cout << _sound << std::endl;
+    std::cout << GREEN << "*No Sound*" << RESET << std::endl;
 }
