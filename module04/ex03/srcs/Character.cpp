@@ -6,7 +6,7 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 10:49:43 by claprand          #+#    #+#             */
-/*   Updated: 2025/02/04 11:38:08 by claprand         ###   ########.fr       */
+/*   Updated: 2025/02/04 13:21:56 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Character::Character(Character const & cpy) : _inventorySize(0) {
     }
     this->_name = cpy._name;
     this->_inventorySize = cpy._inventorySize;
-    if (_inventory > 0){
+    if (_inventorySize > 0){
         for (unsigned int i = 0; i < _inventorySize; i++){
             _inventory[i] = cpy._inventory[i]->clone();
         }
