@@ -6,7 +6,7 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 10:49:43 by claprand          #+#    #+#             */
-/*   Updated: 2025/02/03 15:12:23 by claprand         ###   ########.fr       */
+/*   Updated: 2025/02/04 11:38:08 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,19 +28,26 @@ Character::Character(std::string name) : _name(name), _inventorySize(0){
     return;
 }
 
-Character::Character(Character const & cpy) {
+Character::Character(Character const & cpy) : _inventorySize(0) {
     std::cout << YELLOW << "Character : Copy constructor called!" << RESET << std::endl;
     for (int i = 0; i < 4; i++) {
         _inventory[i] = 0;
     }
-    *this = cpy; 
+    this->_name = cpy._name;
+    this->_inventorySize = cpy._inventorySize;
+    if (_inventory > 0){
+        for (unsigned int i = 0; i < _inventorySize; i++){
+            _inventory[i] = cpy._inventory[i]->clone();
+        }
+    }
 }
 
 Character::~Character(){
     for (int i = 0; i < 4; i++){
-        if (_inventory[i])
+        if (_inventory[i]){
             delete _inventory[i];
-        _inventory[i] = 0;
+            _inventory[i] = 0;
+        }
     }
     std::cout << YELLOW << "Character : Deconstructor called!"  << RESET << std::endl;
     return ;
@@ -87,7 +94,7 @@ void Character::equip(AMateria* m){
 }
 
 void Character::unequip(int idx){
-    if (idx < 0 || idx > 3 || !_inventorySize){
+    if (idx < 0 || idx > 3 || (unsigned)idx >= _inventorySize || !_inventorySize){
         std::cout << RED << "Unequip failed." << RESET << std::endl;
         return ;
     }

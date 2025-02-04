@@ -6,7 +6,7 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 11:28:41 by claprand          #+#    #+#             */
-/*   Updated: 2025/02/03 15:09:17 by claprand         ###   ########.fr       */
+/*   Updated: 2025/02/04 11:33:27 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,18 @@ MateriaSource::MateriaSource(MateriaSource const & cpy){
     }
     this->_type = cpy._type;
     this->_size = cpy._size;
-    *this = cpy;
+    for (int i = 0; i < 4; i++){
+        if (cpy._stored[i])
+            _stored[i] = cpy._stored[i]->clone();
+    }
 }
 
 MateriaSource::~MateriaSource(){
     for (int i = 0; i < 4; i++){
-        if (_stored[i])
+        if (_stored[i]){
             delete _stored[i];
-        _stored[i] = 0;
+            _stored[i] = 0;
+        }
     }
     std::cout << MAGENTA << "MateriaSource : Deconstructor called!"  << RESET << std::endl;
     return ;
