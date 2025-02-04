@@ -6,7 +6,7 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 14:40:51 by claprand          #+#    #+#             */
-/*   Updated: 2025/01/30 13:12:19 by claprand         ###   ########.fr       */
+/*   Updated: 2025/02/04 10:29:35 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 Dog::Dog(){
     this->_type = BLUE "Dog" RESET;
-    this->_sound = BLUE "I bark : Waf Waf" RESET;
     std::cout << BLUE << "Dog : Default constructor called!" << RESET << std::endl;
     return;
 }
@@ -25,7 +24,7 @@ Dog::Dog(std::string type){
     return;
 }
 
-Dog::Dog(Dog const & cpy){
+Dog::Dog(Dog const & cpy) : Animal(cpy){
     std::cout << BLUE << "Dog : Copy constructor called!" << RESET << std::endl;
     this->_type = cpy._type;
     *this = cpy;
@@ -42,6 +41,6 @@ Dog & Dog::operator=(Dog const & rhs){
     return *this;
 }
 
-void Dog::makeSound() const{
-    std::cout << _sound << std::endl;
+void Dog::makeSound() const {
+    std::cout << BLUE << "I bark : Waf Waf" << RESET << std::endl;
 }

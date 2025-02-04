@@ -34,7 +34,7 @@ class WrongAnimal{
         WrongAnimal();
         WrongAnimal(std::string type);
         WrongAnimal(WrongAnimal const & cpy);
-        ~WrongAnimal();
+        virtual ~WrongAnimal();
 
         WrongAnimal & operator=(WrongAnimal const & rhs);
         std::string getType() const;

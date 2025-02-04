@@ -6,7 +6,7 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 14:40:46 by claprand          #+#    #+#             */
-/*   Updated: 2025/01/30 14:01:57 by claprand         ###   ########.fr       */
+/*   Updated: 2025/02/04 10:40:29 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 Cat::Cat() : Animal(){
     this->_type = MAGENTA "Cat" RESET;
-    this->_sound = MAGENTA "I Meow : Meow Meow" RESET;
     std::cout << MAGENTA << "Cat : Default constructor called!" << RESET << std::endl;
     return;
 }
@@ -25,7 +24,7 @@ Cat::Cat(std::string type){
     return;
 }
 
-Cat::Cat(Cat const & cpy){
+Cat::Cat(Cat const & cpy) : Animal(cpy){
     std::cout << MAGENTA << "Cat : Copy constructor called" << RESET << std::endl;
     this->_type = cpy._type;
     *this = cpy;
@@ -37,11 +36,12 @@ Cat::~Cat(){
 }
 
 Cat & Cat::operator=(Cat const & rhs){
-    if (this != &rhs)
+    if (this != &rhs){
         this->_type = rhs.getType();
+    }
     return *this;
 }
 
 void Cat::makeSound() const{
-    std::cout << _sound << std::endl;
+    std::cout << MAGENTA << "I Meow : Meow Meow" << RESET << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 14:16:36 by claprand          #+#    #+#             */
-/*   Updated: 2025/01/30 14:00:50 by claprand         ###   ########.fr       */
+/*   Updated: 2025/02/04 10:40:04 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,11 @@ int main()
     j->makeSound();
     i->makeSound();
     meta->makeSound();
-    std::cout << std::endl;
-    std::cout << "---------------------------------------" << std::endl;
-    std::cout << std::endl;
+    delete j;
+    delete i;
+    delete meta;
+    std::cout << std::endl << "---------------------------------------" << std::endl << std::endl;
+    
     WrongAnimal* wa = new WrongAnimal();
     WrongAnimal *wc = new WrongCat();
     std::cout << GREY << "getType :" << RESET << std::endl;
@@ -38,19 +40,35 @@ int main()
     std::cout << GREY << "MakeSound :" << RESET << std::endl;
     wa->makeSound();
     wc->makeSound();
-    std::cout << std::endl;
-    std::cout << "---------------------------------------" << std::endl;
-    std::cout << std::endl;
+    delete wa;
+    delete wc;
+    
+    std::cout << std::endl << "---------------------------------------" << std::endl << std::endl;
+
     Animal *newAnimal = new Dog();
-    std::cout << GREY << "getType :" << RESET << std::endl;
     std::cout << newAnimal->getType() << " " << std::endl;
-    std::cout << GREY << "MakeSound :" << RESET << std::endl;
     newAnimal->makeSound();
     std::cout << std::endl;
+    delete newAnimal;
+    
     newAnimal = new Cat();
-    std::cout << GREY << "getType :" << RESET << std::endl;
     std::cout << newAnimal->getType() << " " << std::endl;
-    std::cout << GREY << "MakeSound :" << RESET << std::endl;
     newAnimal->makeSound();
+    delete newAnimal;
+    
+    std::cout << std::endl << "---------------------------------------" << std::endl << std::endl;
+
+    Dog newDog;
+    Dog cpyDog = newDog;
+    newDog.makeSound();
+    cpyDog.makeSound();
+
+    std::cout << std::endl << "---------------------------------------" << std::endl << std::endl;
+
+    Cat newCat;
+    Cat cpyCat = newCat;
+    newCat.makeSound();
+    cpyCat.makeSound();
+    
     return 0;
 }
