@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clara <clara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 16:24:31 by claprand          #+#    #+#             */
-/*   Updated: 2025/02/03 20:24:47 by clara            ###   ########.fr       */
+/*   Updated: 2025/02/04 14:28:42 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,23 +27,43 @@
 #include <string.h>
 #include <iostream>
 #include <iomanip>
+#include <limits.h>
 
 class Bureaucrat{
     public :
         Bureaucrat();
+        Bureaucrat(std::string name, unsigned int grade);
         Bureaucrat(Bureaucrat const & cpy);
         ~Bureaucrat();
 
         Bureaucrat & operator=(Bureaucrat const & rhs);
-
-        // Bureaucrat::GradeTooHighException
-        // Bureaucrat::GradeTooLowException
         std::string const getName() const;
         int getGrade() const;
+        void setGrade(int grade);
+        void incrementGrade(int promotion);
+        void decrementGrade(int sack);
+        Bureaucrat & operator++();
+        Bureaucrat & operator--();
+
+        class GradeTooHighException : public std::exception{
+            public :
+                virtual const char * what() const throw(){
+                    return "Bureaucrat grade can't rank higher than 1.\n";
+                }
+        };
+        
+        class GradeTooLowException : public std::exception{
+            public :
+                virtual const char * what() const throw(){
+                    return "Bureaucrat grade can't rank lower than 150.\n";
+                }
+        };
     
     private : 
         const std::string _name;
-        int _grade;
+        unsigned int _grade;
+        static const int _lowestGrade = 150;
+        static const int _highestGrade = 1;
 };
 
 std::ostream &	operator<<(std::ostream & os, Bureaucrat const & rhs);
