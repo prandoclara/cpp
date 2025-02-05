@@ -6,7 +6,7 @@
 #    By: claprand <claprand@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/10 13:51:48 by claprand          #+#    #+#              #
-#    Updated: 2025/02/04 14:02:39 by claprand         ###   ########.fr        #
+#    Updated: 2025/02/05 10:43:49 by claprand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,20 +47,20 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp | $(IFMAKE_DIR)
 					@$(CC) $(FLAGS) -c $< -o $@ $(INCLUDES)
 					
 $(NAME):		$(OBJ)
-					@echo "$(GREY)Compiling Interface$(DEF_COLOR)"
+					@echo "$(GREY)Compiling Bureaucrat$(DEF_COLOR)"
 					@$(CC) $(FLAGS) -o $(NAME) $(OBJ) $(INCLUDES)
-					@echo "$(GREEN)Interface ready.$(DEF_COLOR)"
+					@echo "$(GREEN)Bureaucrat ready.$(DEF_COLOR)"
 
 clean:
-					@echo "$(MAGENTA)Interface objects files cleaned!$(DEF_COLOR)"
+					@echo "$(MAGENTA)Bureaucrat objects files cleaned!$(DEF_COLOR)"
 					@$(RM) $(OBJ_DIR)
 					
 fclean:			clean
-					@echo "$(RED)Interface removed.$(DEF_COLOR)"
+					@echo "$(RED)Bureaucrat removed.$(DEF_COLOR)"
 					@$(RM) $(NAME)
 
 re:				fclean all
-					@echo "$(BLUE)Cleaned and rebuilt everything for Interface $(DEF_COLOR)"
+					@echo "$(BLUE)Cleaned and rebuilt everything for Bureaucrat $(DEF_COLOR)"
 
 vcf:			$(NAME)
 					$(VALGRINDCF) ./$(NAME)
