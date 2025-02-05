@@ -6,7 +6,7 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 10:37:20 by claprand          #+#    #+#             */
-/*   Updated: 2025/02/05 15:28:33 by claprand         ###   ########.fr       */
+/*   Updated: 2025/02/05 16:18:42 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ class AForm{
                 }
         };
 
-        class FormIsAlreadySigned : public std::exception{
+        class AFormIsAlreadySigned : public std::exception{
             public :
                 virtual const char * what() const throw(){
                     return "Form is already signed.\n";
