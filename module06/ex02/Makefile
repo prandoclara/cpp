@@ -6,7 +6,7 @@
 #    By: claprand <claprand@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/10 13:51:48 by claprand          #+#    #+#              #
-#    Updated: 2025/02/06 15:46:41 by claprand         ###   ########.fr        #
+#    Updated: 2025/02/06 15:46:49 by claprand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,14 +21,14 @@ CYAN			= \033[0;96m
 WHITE			= \033[0;97m
 ORANGE			= \033[38;5;214m
 
-NAME			= Intern
+NAME			= Conversion
 CC				= c++
 FLAGS			= -Wall -Werror -Wextra -std=c++98
 INCLUDES		= -I ./includes
 RM				= rm -rf
 VALGRINDCF		= valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes
 
-SRC_FUNCTIONS	= main Bureaucrat AForm ShrubberyCreationForm PresidentialPardonForm RobotomyRequestForm Intern
+SRC_FUNCTIONS	= main 
 OBJ_DIR			= obj/
 SRC_DIR			= srcs/
 SRC				= $(addprefix $(SRC_DIR), $(addsuffix .cpp, $(SRC_FUNCTIONS)))
@@ -46,20 +46,20 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp | $(IFMAKE_DIR)
 					@$(CC) $(FLAGS) -c $< -o $@ $(INCLUDES)
 					
 $(NAME):		$(OBJ)
-					@echo "$(GREY)Compiling Intern$(DEF_COLOR)"
+					@echo "$(GREY)Compiling Conversion$(DEF_COLOR)"
 					@$(CC) $(FLAGS) -o $(NAME) $(OBJ) $(INCLUDES)
-					@echo "$(GREEN)Intern ready.$(DEF_COLOR)"
+					@echo "$(GREEN)Conversion ready.$(DEF_COLOR)"
 
 clean:
-					@echo "$(MAGENTA)Intern objects files cleaned!$(DEF_COLOR)"
+					@echo "$(MAGENTA)Conversion objects files cleaned!$(DEF_COLOR)"
 					@$(RM) $(OBJ_DIR)
 					
 fclean:			clean
-					@echo "$(RED)Intern removed.$(DEF_COLOR)"
+					@echo "$(RED)Conversion removed.$(DEF_COLOR)"
 					@$(RM) $(NAME)
 
 re:				fclean all
-					@echo "$(BLUE)Cleaned and rebuilt everything for Intern $(DEF_COLOR)"
+					@echo "$(BLUE)Cleaned and rebuilt everything for Conversion $(DEF_COLOR)"
 
 vcf:			$(NAME)
 					$(VALGRINDCF) ./$(NAME)

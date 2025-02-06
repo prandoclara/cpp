@@ -6,7 +6,7 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 10:34:20 by claprand          #+#    #+#             */
-/*   Updated: 2025/02/06 11:49:29 by claprand         ###   ########.fr       */
+/*   Updated: 2025/02/06 15:39:22 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,15 @@ AForm *	Intern::makeForm(const std::string & formName, const std::string & targe
 		switch (index){
 			case 0:
 				newForm = new PresidentialPardonForm(target);
+				std::cout << "Presidential Pardon Form create" << std::endl;
 				break;
 			case 1:
 				newForm = new RobotomyRequestForm(target);
+				std::cout << "Robotomy Request Form create" << std::endl;
 				break;
 			case 2:
 				newForm = new ShrubberyCreationForm(target);
+				std::cout << "Shrubbery Creation Form create" << std::endl;
 				break; 
 			default:
 				throw Intern::unknownForm();
