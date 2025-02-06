@@ -6,7 +6,7 @@
 #    By: claprand <claprand@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/10 13:51:48 by claprand          #+#    #+#              #
-#    Updated: 2025/02/05 16:15:56 by claprand         ###   ########.fr        #
+#    Updated: 2025/02/06 10:22:20 by claprand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ INCLUDES		= -I ./includes
 RM				= rm -rf
 VALGRINDCF		= valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes
 
-SRC_FUNCTIONS	= main Bureaucrat Form
+SRC_FUNCTIONS	= main Bureaucrat AForm ShrubberyCreationForm PresidentialPardonForm RobotomyRequestForm
 OBJ_DIR			= obj/
 SRC_DIR			= srcs/
 SRC				= $(addprefix $(SRC_DIR), $(addsuffix .cpp, $(SRC_FUNCTIONS)))

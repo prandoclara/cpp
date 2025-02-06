@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/05 14:38:54 by claprand          #+#    #+#             */
-/*   Updated: 2025/02/06 10:23:02 by claprand         ###   ########.fr       */
+/*   Created: 2025/02/05 14:40:20 by claprand          #+#    #+#             */
+/*   Updated: 2025/02/05 15:37:30 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RobotomyRequestForm_HPP
-# define RobotomyRequestForm_HPP
+#ifndef PresidentialPardonForm_HPP
+# define PresidentialPardonForm_HPP
 
 #define GREY "\033[0;90m"
 #define RED	"\033[0;91m"
@@ -28,24 +28,23 @@
 #include <iostream>
 #include <iomanip>
 #include <limits.h>
-#include <cstdlib>
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 
-class RobotomyRequestForm : public AForm{
+class PresidentialPardonForm : public AForm{
     public :
-        RobotomyRequestForm();
-        RobotomyRequestForm(const std::string & target);
-        RobotomyRequestForm(RobotomyRequestForm const & cpy);
-        virtual ~RobotomyRequestForm();
+        PresidentialPardonForm();
+        PresidentialPardonForm(const std::string & target);
+        PresidentialPardonForm(PresidentialPardonForm const & cpy);
+        virtual ~PresidentialPardonForm();
 
-        RobotomyRequestForm & operator=(RobotomyRequestForm const & rhs);
+        PresidentialPardonForm & operator=(PresidentialPardonForm const & rhs);
         const std::string & getTarget() const;
     
     private : 
         std::string _target;
-        static const int _gradeToSign = 72;
-		static const int _gradeToExecute = 45;
+        static const int _gradeToSign = 25;
+		static const int _gradeToExecute = 5;
         void	executeAction() const;
 };
 

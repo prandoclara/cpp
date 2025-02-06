@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/05 14:38:54 by claprand          #+#    #+#             */
-/*   Updated: 2025/02/06 10:23:02 by claprand         ###   ########.fr       */
+/*   Created: 2025/02/06 10:31:20 by claprand          #+#    #+#             */
+/*   Updated: 2025/02/06 11:52:42 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RobotomyRequestForm_HPP
-# define RobotomyRequestForm_HPP
+#ifndef INTERN_HPP
+# define INTERN_HPP
 
 #define GREY "\033[0;90m"
 #define RED	"\033[0;91m"
@@ -28,25 +28,23 @@
 #include <iostream>
 #include <iomanip>
 #include <limits.h>
-#include <cstdlib>
-#include "Bureaucrat.hpp"
 #include "AForm.hpp"
 
-class RobotomyRequestForm : public AForm{
+class Intern{
     public :
-        RobotomyRequestForm();
-        RobotomyRequestForm(const std::string & target);
-        RobotomyRequestForm(RobotomyRequestForm const & cpy);
-        virtual ~RobotomyRequestForm();
+        Intern();
+        Intern(Intern const & cpy);
+        ~Intern();
 
-        RobotomyRequestForm & operator=(RobotomyRequestForm const & rhs);
-        const std::string & getTarget() const;
-    
-    private : 
-        std::string _target;
-        static const int _gradeToSign = 72;
-		static const int _gradeToExecute = 45;
-        void	executeAction() const;
+        Intern & operator=(Intern const & rhs);
+        AForm *	makeForm(const std::string & formName, const std::string & target);
+
+        class unknownForm : public std::exception{
+            public :
+                virtual const char * what() const throw(){
+                    return "Intern does not recognize this form.\n";
+                }
+        };
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 16:31:16 by claprand          #+#    #+#             */
-/*   Updated: 2025/02/05 13:33:36 by claprand         ###   ########.fr       */
+/*   Updated: 2025/02/06 14:12:05 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,12 +114,12 @@ Bureaucrat & Bureaucrat::operator--(){
 	return *this;
 }
 
-void Bureaucrat::signForm(Form & form){
+void Bureaucrat::signForm(AForm & form){
     try{
         if (form.getSigned())
-            throw Form::FormIsAlreadySigned();
+            throw AForm::AFormIsAlreadySigned();
         else if (getGrade() > form.getToSign())
-            throw Form::GradeTooLowException();
+            throw AForm::GradeTooLowException();
         else{
             form.setSigned(true);
             std::cout << getName() << " signed form " << form.getName() << std::endl;
@@ -128,6 +128,15 @@ void Bureaucrat::signForm(Form & form){
     catch (const std::exception e){
         std::cout << e.what() << std::endl;
     }
+}
+
+void Bureaucrat::executeForm(AForm const & form){
+	try{
+		form.execute(*this);
+ 	}
+	catch (const std::exception& e){
+	    std::cout << "Bureaucrat " << getName() << " executed form " << form.getName() << ".\n";
+	}
 }
 
 std::ostream &	operator<<( std::ostream & os, Bureaucrat const & rhs ) {

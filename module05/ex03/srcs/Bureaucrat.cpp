@@ -6,7 +6,7 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 16:31:16 by claprand          #+#    #+#             */
-/*   Updated: 2025/02/06 13:54:56 by claprand         ###   ########.fr       */
+/*   Updated: 2025/02/06 10:21:43 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,13 +63,13 @@ void	Bureaucrat::setGrade(int grade){
 		else
 			_grade = grade ;			
 	}
-	catch(const std::exception & e){
+	catch(const std::exception& e){
 		std::cout << e.what() << "Promotion candidate : " << *this;
 	}	
 }
 
 void Bureaucrat::incrementGrade(int promotion){
-    if (promotion < 0)
+    if (promotion < 0 || promotion > INT_MAX)
         return;
     for (int i = 0; i < promotion; i++){
         if (_grade == 1)
@@ -79,7 +79,7 @@ void Bureaucrat::incrementGrade(int promotion){
 }
 
 void Bureaucrat::decrementGrade(int sack){
-    if (sack < 0)
+    if (sack < 0 || sack > INT_MAX)
         return;
     for (int i = 0; i < sack; i++){
         if (_grade == 150)
@@ -95,7 +95,7 @@ Bureaucrat & Bureaucrat::operator++(){
         else
             throw (Bureaucrat::GradeTooHighException());
     }
-    catch (const std::exception & e){
+    catch (const std::exception& e){
 		std::cout << e.what() << "Promotion candidate : " << *this;
     }
 	return *this;
@@ -108,10 +108,35 @@ Bureaucrat & Bureaucrat::operator--(){
         else
             throw (Bureaucrat::GradeTooLowException());
     }
-    catch (const std::exception & e){
+    catch (const std::exception& e){
 		std::cout << e.what() << "Promotion candidate : " << *this;
     }
 	return *this;
+}
+
+void Bureaucrat::signForm(AForm & form){
+    try{
+        if (form.getSigned())
+            throw AForm::AFormIsAlreadySigned();
+        else if (getGrade() > form.getToSign())
+            throw AForm::GradeTooLowException();
+        else{
+            form.setSigned(true);
+            std::cout << getName() << " signed form " << form.getName() << std::endl;
+        }
+    }
+    catch (const std::exception e){
+        std::cout << e.what() << std::endl;
+    }
+}
+
+void Bureaucrat::executeForm(AForm const & form){
+	try{
+		form.execute(*this);
+ 	}
+	catch (const std::exception& e){
+	    std::cout << "Bureaucrat " << getName() << " executed form " << form.getName() << ".\n";
+	}
 }
 
 std::ostream &	operator<<( std::ostream & os, Bureaucrat const & rhs ) {

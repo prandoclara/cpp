@@ -6,19 +6,18 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 15:39:02 by claprand          #+#    #+#             */
-/*   Updated: 2025/02/06 14:32:51 by claprand         ###   ########.fr       */
+/*   Updated: 2025/02/05 16:04:57 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm(), _target("Shrubbery Creation form"){
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm(), _target("default target"){
     std::cout << "ShrubberyCreationForm default constructor called" << std::endl;
     return;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string & target) : AForm(){
-    std::cout << "ShrubberyCreationForm parametric constructor called" << std::endl;
     _target = target;
 }
 

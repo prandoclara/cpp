@@ -6,19 +6,18 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 14:39:11 by claprand          #+#    #+#             */
-/*   Updated: 2025/02/06 14:32:19 by claprand         ###   ########.fr       */
+/*   Updated: 2025/02/05 16:17:22 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() : AForm(), _target("Roboto Request Form"){
+RobotomyRequestForm::RobotomyRequestForm() : AForm(), _target("default target"){
     std::cout << "RobotomyRequestForm default constructor called" << std::endl;
     return;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string & target) : AForm(){
-    std::cout << "RobotomyRequestForm parametric constructor called" << std::endl;
     _target = target;
 }
 

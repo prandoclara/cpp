@@ -6,12 +6,12 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 14:02:58 by claprand          #+#    #+#             */
-/*   Updated: 2025/02/05 15:52:07 by claprand         ###   ########.fr       */
+/*   Updated: 2025/02/06 15:17:58 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "ShrubberyCreationForm.hpp"
@@ -19,11 +19,11 @@
 int	main( void ) {
 	
 	{
-		Bureaucrat				Alice("Alice", 150);
-		ShrubberyCreationForm	Shrub("Here");
+		Bureaucrat Alice("Alice", 150);
+		ShrubberyCreationForm Shrub("Here");
 
 		std::cout << Shrub;
-		std::cout << Shrub.getTarget();
+		std::cout << Shrub.getTarget() << std::endl;
 		Alice.executeForm(Shrub);
 		Alice.incrementGrade(50);
 		std::cout << Alice;
@@ -55,14 +55,14 @@ int	main( void ) {
 	}
 	std::cout << "-------------------------\n" ;
 	{
-		Bureaucrat				David("David", 25);
-		Bureaucrat				Eric("Eric", 5);
-		PresidentialPardonForm	Presidential("Guilty person");
+		Bureaucrat David("David", 25);
+		Bureaucrat Eric("Eric", 5);
+		PresidentialPardonForm Presidential("Guilty person");
 
 		std::cout << Presidential;
 		Presidential.beSigned(David);
 		std::cout << Presidential;
 		Eric.executeForm(Presidential);
-	}	
+	}
 	return 0;
 }
