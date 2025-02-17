@@ -6,7 +6,7 @@
 #    By: claprand <claprand@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/26 09:17:09 by mpeulet           #+#    #+#              #
-#    Updated: 2025/02/17 15:00:41 by claprand         ###   ########.fr        #
+#    Updated: 2025/02/17 15:27:37 by claprand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,14 +23,14 @@ CYAN			= \033[0;96m
 WHITE			= \033[0;97m
 ORANGE			= \033[38;5;214m
 
-NAME			= Bitcoin
+NAME			= btc
 CXX				= c++
 FLAGS			= -Wall -Werror -Wextra -g3 -std=c++98 
 INCLUDES		= -I ./includes
 RM				= rm -rf
 VALGRINDCF		= valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes
 
-SRC_FUNCTIONS	= main
+SRC_FUNCTIONS	= main  
 OBJ_DIR			= obj/
 SRC_DIR			= srcs/
 SRC				= $(addprefix $(SRC_DIR), $(addsuffix .cpp, $(SRC_FUNCTIONS)))
