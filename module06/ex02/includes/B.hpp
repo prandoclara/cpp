@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   B.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clara <clara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/06 16:09:23 by claprand          #+#    #+#             */
-/*   Updated: 2025/02/10 20:24:55 by clara            ###   ########.fr       */
+/*   Created: 2025/02/11 10:52:21 by claprand          #+#    #+#             */
+/*   Updated: 2025/02/11 10:53:48 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#ifndef B_HPP
+# define B_HPP
 
-int main(int ac, char **av){
-	if (ac != 2) {
-		std::cout << "Usage: ./convert <numbers>" << std::endl;
-		return (EXIT_FAILURE);
-	}
-	ScalarConverter::convert(av[1]);
-	return (EXIT_SUCCESS);
-}
+#include "Base.hpp"
+
+class B : public Base {};
+
+#endif

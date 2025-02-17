@@ -6,7 +6,7 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 16:31:16 by claprand          #+#    #+#             */
-/*   Updated: 2025/02/06 14:12:05 by claprand         ###   ########.fr       */
+/*   Updated: 2025/02/10 14:00:22 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	Bureaucrat::setGrade(int grade){
 }
 
 void Bureaucrat::incrementGrade(int promotion){
-    if (promotion < 0 || promotion > INT_MAX)
+    if (promotion < 0)
         return;
     for (int i = 0; i < promotion; i++){
         if (_grade == 1)
@@ -79,7 +79,7 @@ void Bureaucrat::incrementGrade(int promotion){
 }
 
 void Bureaucrat::decrementGrade(int sack){
-    if (sack < 0 || sack > INT_MAX)
+    if (sack < 0)
         return;
     for (int i = 0; i < sack; i++){
         if (_grade == 150)
@@ -125,8 +125,8 @@ void Bureaucrat::signForm(AForm & form){
             std::cout << getName() << " signed form " << form.getName() << std::endl;
         }
     }
-    catch (const std::exception e){
-        std::cout << e.what() << std::endl;
+    catch (const std::exception & e){
+        std::cout << e.what() << getName() << " couldn't sign the form " << form.getName() << std::endl;
     }
 }
 
@@ -134,7 +134,7 @@ void Bureaucrat::executeForm(AForm const & form){
 	try{
 		form.execute(*this);
  	}
-	catch (const std::exception& e){
+	catch (const std::exception & e){
 	    std::cout << "Bureaucrat " << getName() << " executed form " << form.getName() << ".\n";
 	}
 }

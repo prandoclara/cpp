@@ -6,30 +6,29 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 14:39:11 by claprand          #+#    #+#             */
-/*   Updated: 2025/02/06 14:32:19 by claprand         ###   ########.fr       */
+/*   Updated: 2025/02/10 13:37:46 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm() : AForm(), _target("Roboto Request Form"){
-    std::cout << "RobotomyRequestForm default constructor called" << std::endl;
+    std::cout << "Robotomy Request Form default constructor called" << std::endl;
     return;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const std::string & target) : AForm(){
-    std::cout << "RobotomyRequestForm parametric constructor called" << std::endl;
-    _target = target;
+RobotomyRequestForm::RobotomyRequestForm(const std::string & target) : AForm("Robotomy Request", _gradeToSign, _gradeToExecute), _target(target){
+    std::cout << "Robotomy Request Form parametric constructor called" << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const & cpy) : AForm(cpy){
-    std::cout << "RobotomyRequestForm copy constructor called" << std::endl;
+    std::cout << "Robotomy Request Form copy constructor called" << std::endl;
     _target = cpy._target;
     *this = cpy;
 }
         
 RobotomyRequestForm::~RobotomyRequestForm(){
-    std::cout << "RobotomyRequestForm deconstructor called" << std::endl;
+    std::cout << "Robotomy Request Form deconstructor called" << std::endl;
 }
 
 RobotomyRequestForm & RobotomyRequestForm::operator=(RobotomyRequestForm const & rhs){

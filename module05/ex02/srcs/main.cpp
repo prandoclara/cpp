@@ -6,7 +6,7 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 14:02:58 by claprand          #+#    #+#             */
-/*   Updated: 2025/02/06 15:17:58 by claprand         ###   ########.fr       */
+/*   Updated: 2025/02/10 13:48:51 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,20 +36,16 @@ int	main( void ) {
 		Bureaucrat			Bob("Bob", 50);
 		RobotomyRequestForm	Robotomy("Charlie");
 		RobotomyRequestForm	testCpy(Robotomy);
-		RobotomyRequestForm	testEqual;
 
-		std::cout << testEqual;
-		testEqual = Robotomy;
-		std::cout << testEqual.getTarget() << std::endl;
-		Robotomy.beSigned(Bob);
+		std::cout << Robotomy;
+		std::cout << testCpy;
 		Bob.decrementGrade(1000);
 		std::cout << Bob;
 		Bob.executeForm(Robotomy);
 		Bob.incrementGrade(1000);
 		std::cout << Bob;
 		Bob.executeForm(Robotomy);
-		Bob.executeForm(Robotomy);
-		Bob.executeForm(Robotomy);
+		Bob.signForm(Robotomy);
 		Bob.executeForm(Robotomy);
 		Bob.executeForm(Robotomy);
 	}

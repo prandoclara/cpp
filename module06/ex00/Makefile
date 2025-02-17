@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: claprand <claprand@student.42.fr>          +#+  +:+       +#+         #
+#    By: clara <clara@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/10 13:51:48 by claprand          #+#    #+#              #
-#    Updated: 2025/02/06 15:46:49 by claprand         ###   ########.fr        #
+#    Updated: 2025/02/10 20:26:28 by clara            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ INCLUDES		= -I ./includes
 RM				= rm -rf
 VALGRINDCF		= valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes
 
-SRC_FUNCTIONS	= main 
+SRC_FUNCTIONS	= main ScalarConverter
 OBJ_DIR			= obj/
 SRC_DIR			= srcs/
 SRC				= $(addprefix $(SRC_DIR), $(addsuffix .cpp, $(SRC_FUNCTIONS)))

@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
+/*   Functions.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/05 14:40:20 by claprand          #+#    #+#             */
-/*   Updated: 2025/02/10 13:23:32 by claprand         ###   ########.fr       */
+/*   Created: 2025/02/11 11:00:58 by claprand          #+#    #+#             */
+/*   Updated: 2025/02/13 13:39:33 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PresidentialPardonForm_HPP
-# define PresidentialPardonForm_HPP
+#ifndef FUNCTIONS_HPP
+# define FUNCTIONS_HPP
 
 #define GREY "\033[0;90m"
 #define RED	"\033[0;91m"
@@ -24,28 +24,22 @@
 #define ORANGE "\033[38;5;214m"
 #define RESET   "\033[0m"
 
-#include <string.h>
 #include <iostream>
+#include <string>
+#include <limits>
+#include <cmath>
 #include <iomanip>
-#include <limits.h>
-#include "Bureaucrat.hpp"
-#include "AForm.hpp"
+#include <cstdlib>
+#include <sstream>
+#include <stdint.h>
+#include <ctime>
+#include "Base.hpp"
+#include "A.hpp"
+#include "B.hpp"
+#include "C.hpp"
 
-class PresidentialPardonForm : public AForm{
-    public :
-        PresidentialPardonForm();
-        PresidentialPardonForm(const std::string & target);
-        PresidentialPardonForm(PresidentialPardonForm const & cpy);
-        virtual ~PresidentialPardonForm();
-
-        PresidentialPardonForm & operator=(PresidentialPardonForm const & rhs);
-        const std::string & getTarget() const;
-    
-    private : 
-        std::string _target;
-        static const int _gradeToSign = 25;
-		static const int _gradeToExecute = 5;
-        void	executeAction() const;
-};
+Base * generate(void);
+void identify(Base* p);
+void identify(Base& p);
 
 #endif

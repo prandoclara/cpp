@@ -6,7 +6,7 @@
 #    By: claprand <claprand@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/10 13:51:48 by claprand          #+#    #+#              #
-#    Updated: 2025/02/11 10:47:28 by claprand         ###   ########.fr        #
+#    Updated: 2025/02/11 11:50:47 by claprand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,14 +21,14 @@ CYAN			= \033[0;96m
 WHITE			= \033[0;97m
 ORANGE			= \033[38;5;214m
 
-NAME			= Serializer
+NAME			= Array
 CC				= c++
 FLAGS			= -Wall -Werror -Wextra -std=c++98
 INCLUDES		= -I ./includes
 RM				= rm -rf
 VALGRINDCF		= valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes
 
-SRC_FUNCTIONS	= main Serializer
+SRC_FUNCTIONS	= main
 OBJ_DIR			= obj/
 SRC_DIR			= srcs/
 SRC				= $(addprefix $(SRC_DIR), $(addsuffix .cpp, $(SRC_FUNCTIONS)))
@@ -46,20 +46,20 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp | $(IFMAKE_DIR)
 					@$(CC) $(FLAGS) -c $< -o $@ $(INCLUDES)
 					
 $(NAME):		$(OBJ)
-					@echo "$(GREY)Compiling Identify Serializer$(DEF_COLOR)"
+					@echo "$(GREY)Compiling Array$(DEF_COLOR)"
 					@$(CC) $(FLAGS) -o $(NAME) $(OBJ) $(INCLUDES)
-					@echo "$(GREEN)Identify Serializer ready.$(DEF_COLOR)"
+					@echo "$(GREEN)Array ready.$(DEF_COLOR)"
 
 clean:
-					@echo "$(MAGENTA)Identify Serializer objects files cleaned!$(DEF_COLOR)"
+					@echo "$(MAGENTA)Array objects files cleaned!$(DEF_COLOR)"
 					@$(RM) $(OBJ_DIR)
 					
 fclean:			clean
-					@echo "$(RED)Identify Serializer removed.$(DEF_COLOR)"
+					@echo "$(RED)Array removed.$(DEF_COLOR)"
 					@$(RM) $(NAME)
 
 re:				fclean all
-					@echo "$(BLUE)Cleaned and rebuilt everything for Identify Serializer $(DEF_COLOR)"
+					@echo "$(BLUE)Cleaned and rebuilt everything for Array $(DEF_COLOR)"
 
 vcf:			$(NAME)
 					$(VALGRINDCF) ./$(NAME)

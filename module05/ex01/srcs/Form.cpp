@@ -6,7 +6,7 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 10:39:37 by claprand          #+#    #+#             */
-/*   Updated: 2025/02/06 14:11:41 by claprand         ###   ########.fr       */
+/*   Updated: 2025/02/10 13:12:54 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Form::Form(const std::string & name, int toSign, int toExecute) : _name(name), _
             _toExecute = toExecute;
         }
     }
-    catch (const std::exception e){
+    catch (const std::exception & e){
         std::cout << e.what() << std::endl;
     }
 }
@@ -88,7 +88,7 @@ void Form::beSigned(Bureaucrat const & bureaucrat){
             _signedBy = bureaucrat.getName();
         }
     }
-    catch (const std::exception e){
+    catch (const std::exception & e){
         std::cout << e.what();
     }
 }

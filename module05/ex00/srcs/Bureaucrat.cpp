@@ -6,7 +6,7 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 16:31:16 by claprand          #+#    #+#             */
-/*   Updated: 2025/02/06 13:54:56 by claprand         ###   ########.fr       */
+/*   Updated: 2025/02/10 14:01:51 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,8 @@ Bureaucrat::Bureaucrat(std::string name, unsigned int grade) : _name(name){
 		_grade = grade;	
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const & cpy) : _name(cpy._name){
+Bureaucrat::Bureaucrat(Bureaucrat const & cpy) : _name(cpy._name), _grade(cpy._grade){
     std::cout << "Bureaucrat copy constructor called" << std::endl;
-    this->_grade = cpy._grade;
-    *this = cpy;
 }
         
 Bureaucrat::~Bureaucrat(){
@@ -53,15 +51,15 @@ int Bureaucrat::getGrade() const{
 }
 
 void	Bureaucrat::setGrade(int grade){
-	if (grade < 0 || grade > INT_MAX)
+	if (grade < 0)
 		return;
 	try{
 		if (grade > 150)
 			throw (Bureaucrat::GradeTooLowException());
-		else if ( grade < 1 )
+		else if (grade < 1)
 			throw (Bureaucrat::GradeTooHighException());
 		else
-			_grade = grade ;			
+			_grade = grade;			
 	}
 	catch(const std::exception & e){
 		std::cout << e.what() << "Promotion candidate : " << *this;

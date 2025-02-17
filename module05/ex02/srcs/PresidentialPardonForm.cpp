@@ -13,23 +13,22 @@
 #include "PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm() : AForm(), _target("Presidential Pardon form"){
-    std::cout << "PresidentialPardonForm default constructor called" << std::endl;
+    std::cout << "Presidential Pardon Form default constructor called" << std::endl;
     return;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const std::string & target) : AForm(){
-    std::cout << "PresidentialPardonForm parametric constructor called" << std::endl;
-    _target = target;
+PresidentialPardonForm::PresidentialPardonForm(const std::string & target) : AForm("Presidential Pardon", _gradeToSign, _gradeToExecute), _target(target){
+    std::cout << "Presidential Pardon Form parametric constructor called" << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const & cpy) : AForm(cpy){
-    std::cout << "PresidentialPardonForm copy constructor called" << std::endl;
+    std::cout << "Presidential Pardon Form copy constructor called" << std::endl;
     _target = cpy._target;
     *this = cpy;
 }
         
 PresidentialPardonForm::~PresidentialPardonForm(){
-    std::cout << "PresidentialPardonForm deconstructor called" << std::endl;
+    std::cout << "Presidential Pardon Form deconstructor called" << std::endl;
 }
 
 PresidentialPardonForm & PresidentialPardonForm::operator=(PresidentialPardonForm const & rhs){

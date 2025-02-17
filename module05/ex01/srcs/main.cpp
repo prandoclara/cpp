@@ -6,7 +6,7 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 14:02:58 by claprand          #+#    #+#             */
-/*   Updated: 2025/02/05 13:13:34 by claprand         ###   ########.fr       */
+/*   Updated: 2025/02/10 12:02:10 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,5 @@ int	main( void ) {
 		Alice.signForm(B) ;
 		Alice.signForm(B) ;
 	}
-	
 	return 0 ;
 }

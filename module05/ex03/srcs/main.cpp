@@ -6,7 +6,7 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 14:02:58 by claprand          #+#    #+#             */
-/*   Updated: 2025/02/06 15:42:10 by claprand         ###   ########.fr       */
+/*   Updated: 2025/02/10 13:58:59 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "Intern.hpp"
 
-
 int	main( void ) {
-	
-	{
-		Intern	Uk;
-		Intern	testCpy(Uk);
-		Intern	testEqual;
-
-		testEqual = Uk;
-	}
-	std::cout << "----------------------------------------" << std::endl;
 	{
 		Intern		someRandomIntern;
 		Bureaucrat	Alice("Alice", 1);
@@ -35,10 +25,15 @@ int	main( void ) {
 		AForm*		a;
 		AForm*		b;
 		AForm*		c;
-
+		std::cout << std::endl;
 		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+		std::cout << std::endl;
+		a = someRandomIntern.makeForm("robotomy ", "a");
+		std::cout << std::endl;
 		b = someRandomIntern.makeForm("shrubbery creation", "b");
+		std::cout << std::endl;
 		c = someRandomIntern.makeForm("presidential pardon", "c");
+		std::cout << std::endl;
 
 		std::cout << *rrf;
 		std::cout << *b;
@@ -50,33 +45,6 @@ int	main( void ) {
 		delete rrf;
 		delete b;
 		delete c;
-		
-		a = someRandomIntern.makeForm("robotomy ", "a");
 	}
-	
 	return 0 ;
 }
-
-// int main() {
-// 	Intern someRandomIntern;
-// 	Bureaucrat boss("The Boss", 1);
-
-// 	AForm* form1 = someRandomIntern.makeForm("robotomy request", "Bender");
-// 	if (form1) {
-// 		boss.signForm(*form1);
-// 		boss.executeForm(*form1);
-// 		delete form1;
-// 	}
-// 	try {
-// 		AForm* form2 = someRandomIntern.makeForm("invalid form name", "Unknown");
-// 		delete form2;
-// 	} catch (const std::exception& e) {
-// 		std::cerr << e.what() << std::endl;
-// 	}
-
-
-	// Intern someRandomIntern;
-	// AForm* rrf;
-	// rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-	// return (0);
-//}

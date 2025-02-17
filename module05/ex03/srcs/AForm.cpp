@@ -6,7 +6,7 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 13:41:59 by claprand          #+#    #+#             */
-/*   Updated: 2025/02/06 10:26:26 by claprand         ###   ########.fr       */
+/*   Updated: 2025/02/10 14:20:33 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void AForm::beSigned(Bureaucrat const & bureaucrat){
             _signedBy = bureaucrat.getName();
         }
     }
-    catch (const std::exception e){
+    catch (const std::exception & e){
         std::cout << e.what();
     }
 }

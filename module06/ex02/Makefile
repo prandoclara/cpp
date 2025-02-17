@@ -6,7 +6,7 @@
 #    By: claprand <claprand@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/10 13:51:48 by claprand          #+#    #+#              #
-#    Updated: 2025/02/06 15:46:49 by claprand         ###   ########.fr        #
+#    Updated: 2025/02/11 11:04:41 by claprand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,14 +21,14 @@ CYAN			= \033[0;96m
 WHITE			= \033[0;97m
 ORANGE			= \033[38;5;214m
 
-NAME			= Conversion
+NAME			= real_type
 CC				= c++
 FLAGS			= -Wall -Werror -Wextra -std=c++98
 INCLUDES		= -I ./includes
 RM				= rm -rf
 VALGRINDCF		= valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes
 
-SRC_FUNCTIONS	= main 
+SRC_FUNCTIONS	= main Base Functions 
 OBJ_DIR			= obj/
 SRC_DIR			= srcs/
 SRC				= $(addprefix $(SRC_DIR), $(addsuffix .cpp, $(SRC_FUNCTIONS)))
@@ -46,20 +46,20 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp | $(IFMAKE_DIR)
 					@$(CC) $(FLAGS) -c $< -o $@ $(INCLUDES)
 					
 $(NAME):		$(OBJ)
-					@echo "$(GREY)Compiling Conversion$(DEF_COLOR)"
+					@echo "$(GREY)Compiling Identify Real Type$(DEF_COLOR)"
 					@$(CC) $(FLAGS) -o $(NAME) $(OBJ) $(INCLUDES)
-					@echo "$(GREEN)Conversion ready.$(DEF_COLOR)"
+					@echo "$(GREEN)Identify Real Type ready.$(DEF_COLOR)"
 
 clean:
-					@echo "$(MAGENTA)Conversion objects files cleaned!$(DEF_COLOR)"
+					@echo "$(MAGENTA)Identify Real Type objects files cleaned!$(DEF_COLOR)"
 					@$(RM) $(OBJ_DIR)
 					
 fclean:			clean
-					@echo "$(RED)Conversion removed.$(DEF_COLOR)"
+					@echo "$(RED)Identify Real Type removed.$(DEF_COLOR)"
 					@$(RM) $(NAME)
 
 re:				fclean all
-					@echo "$(BLUE)Cleaned and rebuilt everything for Conversion $(DEF_COLOR)"
+					@echo "$(BLUE)Cleaned and rebuilt everything for Identify Real Type $(DEF_COLOR)"
 
 vcf:			$(NAME)
 					$(VALGRINDCF) ./$(NAME)

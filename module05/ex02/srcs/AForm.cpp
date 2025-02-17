@@ -6,7 +6,7 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 13:41:59 by claprand          #+#    #+#             */
-/*   Updated: 2025/02/06 10:26:26 by claprand         ###   ########.fr       */
+/*   Updated: 2025/02/10 12:04:15 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ AForm::AForm(const std::string & name, int toSign, int toExecute) : _name(name),
             _toExecute = toExecute;
         }
     }
-    catch (const std::exception e){
+    catch (const std::exception & e){
         std::cout << e.what() << std::endl;
     }
 }

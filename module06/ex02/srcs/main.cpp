@@ -3,20 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clara <clara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/06 16:09:23 by claprand          #+#    #+#             */
-/*   Updated: 2025/02/10 20:24:55 by clara            ###   ########.fr       */
+/*   Created: 2025/02/11 11:04:56 by claprand          #+#    #+#             */
+/*   Updated: 2025/02/11 11:23:14 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#include "Functions.hpp"
 
-int main(int ac, char **av){
-	if (ac != 2) {
-		std::cout << "Usage: ./convert <numbers>" << std::endl;
-		return (EXIT_FAILURE);
-	}
-	ScalarConverter::convert(av[1]);
-	return (EXIT_SUCCESS);
+class D : public Base {};
+
+int	main( void ) {
+
+	Base * base = generate() ;
+    Base * testD = new D ;
+
+	identify(base);
+	std::cout << "-------------------\n";
+	identify(*base) ;
+	std::cout << "-------------------\n";
+	identify(testD);
+	std::cout << "-------------------\n";
+	identify(*testD);
+
+	delete base;
+	delete testD;
+	return 0;
 }

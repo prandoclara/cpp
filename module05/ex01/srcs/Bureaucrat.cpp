@@ -6,7 +6,7 @@
 /*   By: claprand <claprand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 16:31:16 by claprand          #+#    #+#             */
-/*   Updated: 2025/02/05 13:33:36 by claprand         ###   ########.fr       */
+/*   Updated: 2025/02/10 14:00:45 by claprand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,10 @@ Bureaucrat::Bureaucrat(std::string name, unsigned int grade) : _name(name){
 		_grade = grade;	
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const & cpy) : _name(cpy._name){
+Bureaucrat::Bureaucrat(Bureaucrat const & cpy) : _name(cpy._name), _grade(cpy._grade){
     std::cout << "Bureaucrat copy constructor called" << std::endl;
-    this->_grade = cpy._grade;
-    *this = cpy;
 }
+
         
 Bureaucrat::~Bureaucrat(){
     std::cout << "Bureaucrat deconstructor called" << std::endl;
@@ -52,24 +51,22 @@ int Bureaucrat::getGrade() const{
     return _grade;
 }
 
-void	Bureaucrat::setGrade(int grade){
-	if (grade < 0 || grade > INT_MAX)
-		return;
-	try{
-		if (grade > 150)
-			throw (Bureaucrat::GradeTooLowException());
-		else if ( grade < 1 )
-			throw (Bureaucrat::GradeTooHighException());
-		else
-			_grade = grade ;			
-	}
-	catch(const std::exception& e){
-		std::cout << e.what() << "Promotion candidate : " << *this;
-	}	
+void Bureaucrat::setGrade(int grade){
+    try {
+        if (grade > 150)
+            throw Bureaucrat::GradeTooLowException();
+        else if (grade < 1)
+            throw Bureaucrat::GradeTooHighException();
+        else
+            _grade = grade;
+    }
+    catch(const std::exception& e){
+        std::cout << e.what() << " Promotion candidate : " << *this << std::endl;
+    }    
 }
 
 void Bureaucrat::incrementGrade(int promotion){
-    if (promotion < 0 || promotion > INT_MAX)
+    if (promotion < 0)
         return;
     for (int i = 0; i < promotion; i++){
         if (_grade == 1)
@@ -79,7 +76,7 @@ void Bureaucrat::incrementGrade(int promotion){
 }
 
 void Bureaucrat::decrementGrade(int sack){
-    if (sack < 0 || sack > INT_MAX)
+    if (sack < 0)
         return;
     for (int i = 0; i < sack; i++){
         if (_grade == 150)
@@ -125,8 +122,8 @@ void Bureaucrat::signForm(Form & form){
             std::cout << getName() << " signed form " << form.getName() << std::endl;
         }
     }
-    catch (const std::exception e){
-        std::cout << e.what() << std::endl;
+    catch (const std::exception & e){
+        std::cout << e.what() << getName() << " couldn't sign form " << form.getName() << std::endl;
     }
 }
 
